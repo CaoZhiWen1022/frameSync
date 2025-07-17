@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="98,98" extention="Button">
+  <controller name="button" pages="2,up,3,down" selected="1"/>
+  <displayList>
+    <component id="n0_g365" name="head" src="g3655" fileName="UserHead.xml" pkg="bfsobnp3" xy="0,0"/>
+    <graph id="n1_g365" name="n1" xy="-1,-1" size="100,100" type="rect" lineSize="6" lineColor="#ffffff00" fillColor="#00ffff00" corner="10">
+      <gearDisplay controller="button" pages="3"/>
+    </graph>
+  </displayList>
+  <Button mode="Radio"/>
+</component>

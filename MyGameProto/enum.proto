@@ -1,0 +1,10 @@
+syntax = "proto3";
+package proto;
+
+enum RetCode{
+    SUCCESS = 0; //成功
+    FAIL = -1;//失败
+    NOTACCOUNT=-2;//账号不存在
+    ACCOUNTEXIST=-3;//账号已存在
+    ACCOUNTNAMEEXIST=-4;//昵称已存在
+}

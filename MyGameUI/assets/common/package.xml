@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="bfsobnp3">
+  <resources>
+    <component id="lk2f0" name="FullScreenMaskPanel.xml" path="/" exported="true"/>
+    <component id="lk2f1" name="PopupMaskPanel.xml" path="/" exported="true"/>
+    <component id="lk2f2" name="btn.xml" path="/" exported="true"/>
+    <component id="lk2f3" name="TipPanel.xml" path="/" exported="true"/>
+    <component id="lk2f4" name="tipsCom.xml" path="/"/>
+    <component id="g3655" name="UserHead.xml" path="/" exported="true"/>
+    <image id="g3656" name="10001.png" path="/"/>
+  </resources>
+  <publish name="" genCode="true" excluded="g3656"/>
+</packageDescription>

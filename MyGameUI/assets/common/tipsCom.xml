@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="79,56">
+  <displayList>
+    <graph id="n1_lk2f" name="n1" xy="-19,-8" pivot="0.5,0.5" size="117,72" alpha="0.5" type="rect" fillColor="#ff666666">
+      <relation target="n0_lk2f" sidePair="width-width,height-height"/>
+    </graph>
+    <text id="n0_lk2f" name="tips" xy="0,0" pivot="0.5,0.5" size="79,56" fontSize="42" color="#ff0000" text="tips"/>
+  </displayList>
+</component>

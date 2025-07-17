@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="779,688">
+  <controller name="use" pages="0,,1," selected="0">
+    <remark page="0" value="使用中"/>
+    <remark page="1" value="使用"/>
+  </controller>
+  <displayList>
+    <graph id="n0_g365" name="n0" xy="0,0" size="779,688" type="rect"/>
+    <text id="n1_g365" name="n1" xy="248,29" size="283,81" fontSize="37" align="center" vAlign="middle" autoSize="none" text="头像设置"/>
+    <list id="n2_g365" name="ls" xy="162,175" size="454,338" layout="flow_hz" overflow="scroll" lineGap="20" colGap="20" defaultItem="ui://bl738s84g3652" autoClearItems="true">
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+    <component id="n3_g365" name="userBtn" src="lk2f2" fileName="btn.xml" pkg="bfsobnp3" xy="289,568">
+      <gearText controller="use" pages="0" values="使用中" default="使用"/>
+      <Button title="使用中"/>
+    </component>
+  </displayList>
+</component>

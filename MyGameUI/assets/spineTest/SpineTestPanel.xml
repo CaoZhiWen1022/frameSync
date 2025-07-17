@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <graph id="n0_lk2f" name="n0" xy="0,0" size="1920,1080" type="rect"/>
+    <list id="n9_lk2f" name="heroList" xy="2,3" size="1919,80" layout="row" overflow="scroll" colGap="9" defaultItem="ui://bfsobnp3lk2f2" autoItemSize="false" autoClearItems="true">
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+    <component id="n3_lk2f" name="attack" src="lk2f2" fileName="btn.xml" pkg="bfsobnp3" xy="120,752">
+      <Button title="attack"/>
+    </component>
+    <component id="n5_lk2f" name="dead" src="lk2f2" fileName="btn.xml" pkg="bfsobnp3" xy="340,752">
+      <Button title="dead"/>
+    </component>
+    <component id="n6_lk2f" name="down" src="lk2f2" fileName="btn.xml" pkg="bfsobnp3" xy="560,752">
+      <Button title="down"/>
+    </component>
+    <component id="n7_lk2f" name="hit" src="lk2f2" fileName="btn.xml" pkg="bfsobnp3" xy="780,752">
+      <Button title="hit"/>
+    </component>
+    <component id="n8_lk2f" name="jump" src="lk2f2" fileName="btn.xml" pkg="bfsobnp3" xy="1000,752">
+      <Button title="jump"/>
+    </component>
+    <component id="n10_lk2f" name="stand" src="lk2f2" fileName="btn.xml" pkg="bfsobnp3" xy="1220,752">
+      <Button title="stand"/>
+    </component>
+    <component id="n11_lk2f" name="skill1" src="lk2f2" fileName="btn.xml" pkg="bfsobnp3" xy="1440,752">
+      <Button title="skill1"/>
+    </component>
+    <graph id="n2_lk2f" name="spineRoot" xy="776,123" size="367,512"/>
+  </displayList>
+</component>

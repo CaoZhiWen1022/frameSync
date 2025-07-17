@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="b6jm6cmm">
+  <resources>
+    <component id="lk2f0" name="LoginPanel.xml" path="/" exported="true"/>
+    <component id="lk2f1" name="ReqisterPopup.xml" path="/" exported="true"/>
+  </resources>
+  <publish name="" genCode="true"/>
+</packageDescription>

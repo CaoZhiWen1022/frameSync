@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="pve8p3jd">
+  <resources>
+    <component id="g3650" name="BattlePanel.xml" path="/" exported="true"/>
+    <component id="lma81" name="MatchingPanel.xml" path="/" exported="true"/>
+    <component id="lma83" name="BattleUserItem_left.xml" path="/"/>
+    <component id="lma84" name="BattleUserItem_Right.xml" path="/"/>
+    <image id="lma87" name="n7.png" path="/"/>
+    <image id="lma88" name="n8.png" path="/"/>
+    <component id="lma89" name="BattlePlayerItem.xml" path="/"/>
+    <component id="lma8a" name="BattleStartDownTime.xml" path="/"/>
+  </resources>
+  <publish name="" genCode="true"/>
+</packageDescription>

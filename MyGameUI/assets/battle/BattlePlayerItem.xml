@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="100,40">
+  <controller name="isMy" pages="0,,1," selected="1"/>
+  <displayList>
+    <loader id="n0_lma8" name="n0" xy="0,0" size="100,40" url="ui://pve8p3jdlma88">
+      <gearIcon controller="isMy" pages="1" values="ui://pve8p3jdlma88" default="ui://pve8p3jdlma87"/>
+    </loader>
+    <graph id="n1_lma8" name="spineRoot" xy="50,10" size="0,0" type="rect"/>
+  </displayList>
+</component>

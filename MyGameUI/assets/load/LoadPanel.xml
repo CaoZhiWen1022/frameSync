@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <graph id="n0_lk2f" name="n0" xy="0,0" size="1920,1080" type="rect"/>
+    <text id="n1_lk2f" name="n1" xy="748,478" size="424,124" fontSize="96" text="My Game"/>
+    <component id="n2_lk2f" name="bar" src="lk2f1" fileName="bar.xml" xy="191,848">
+      <ProgressBar value="100" max="100"/>
+    </component>
+  </displayList>
+</component>

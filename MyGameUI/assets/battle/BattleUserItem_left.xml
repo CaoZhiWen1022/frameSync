@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="229,98">
+  <controller name="isMy" pages="0,,1," selected="1"/>
+  <displayList>
+    <component id="n0_lma8" name="head" src="g3655" fileName="UserHead.xml" pkg="bfsobnp3" xy="0,0"/>
+    <text id="n1_lma8" name="name" xy="115,33" size="114,32" fontSize="22" color="#ff0000" strokeColor="#000000" text="UserName">
+      <gearColor controller="isMy" pages="0,1" values="#00ff00,#000000|#ff0000,#000000"/>
+    </text>
+  </displayList>
+</component>

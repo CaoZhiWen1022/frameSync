@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+package proto;
+import "enum.proto";
+import "message.proto";
+
+message BattleUserInfo{
+    UserInfo userInfo=1;
+    string useHeroId=2;
+}
+
+message mathchingReq{
+
+}
+
+message matchingResp{
+    RetCode code = 1;
+   MsgId id = 2;
+   int64 roomId=3;
+   repeated BattleUserInfo users=4;
+}
+
+message clientReadyReq{
+    int32 roomId=1;
+}
+
+message gameStartDownTimeResp{
+RetCode code = 1;
+   MsgId id = 2;
+   int32 time=3;
+}
+
+message gameSatrtResp{
+RetCode code = 1;
+   MsgId id = 2;
+}
+
+message v2{
+    int32 x=1;
+    int32 y=2;
+}
+
+message battleMoveData{
+    v2 target=2;
+}
+
+message battleClientFrameData{
+    int32 op=1;
+    battleMoveData moveData=2;
+}
+
+message battleFrameReq{
+    int32 frameIndex=1;
+    battleClientFrameData data=2;
+}
+
+message battleServerFrameData{
+    int32 userId=1;
+    battleClientFrameData data=2;
+}
+
+message battleFrameResp{
+    RetCode code = 1;
+   MsgId id = 2;
+   int32 frameIndex=3;
+  repeated battleServerFrameData data=4;
+}
+
+message battleFrameAllReq{
+    int32 clientFrame=1;
+}
+
+
+message battleFrameAllResp{
+    RetCode code = 1;
+   MsgId id = 2;
+   
+}

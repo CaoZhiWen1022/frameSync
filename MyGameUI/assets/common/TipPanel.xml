@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <component id="n0_lk2f" name="tips" src="lk2f4" fileName="tipsCom.xml" xy="920,512"/>
+  </displayList>
+  <transition name="t0">
+    <item time="0" type="XY" target="n0_lk2f" tween="true" startValue="920,512" endValue="920,355" duration="18"/>
+    <item time="16" type="Alpha" target="n0_lk2f" tween="true" startValue="1" endValue="0" duration="8"/>
+  </transition>
+</component>

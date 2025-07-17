@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package proto;
+
+import "enum.proto";
+import "message.proto";
+
+message CommonResp {
+  RetCode code = 1;
+}
+
+message CommonReq {
+  
+}
+
+message CommonFailResp{
+  MsgId id=1;
+  RetCode code=2;
+  string message=3;
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <graph id="n0_lk2f" name="n0" xy="0,0" size="1920,1080" type="rect"/>
+    <text id="n1_lk2f" name="n1" xy="694,576" size="92,59" group="n7_lk2f" fontSize="44" text="账号"/>
+    <graph id="n3_lk2f" name="n3" xy="814,575" size="412,59" group="n7_lk2f" type="rect" fillColor="#ffcccccc"/>
+    <text id="n2_lk2f" name="account" xy="814,575" size="412,59" group="n7_lk2f" fontSize="44" autoSize="none" text="" input="true" prompt="输入账号"/>
+    <group id="n7_lk2f" name="n7" xy="694,575" size="532,60"/>
+    <text id="n4_lk2f" name="n4" xy="694,687" size="92,59" group="n8_lk2f" fontSize="44" text="密码"/>
+    <graph id="n5_lk2f" name="n5" xy="814,686" size="412,59" group="n8_lk2f" type="rect" fillColor="#ffcccccc"/>
+    <text id="n6_lk2f" name="password" xy="814,686" size="412,59" group="n8_lk2f" fontSize="44" autoSize="none" text="" input="true" prompt="输入密码"/>
+    <group id="n8_lk2f" name="n8" xy="694,686" size="532,60"/>
+    <component id="n9_lk2f" name="loginBtn" src="lk2f2" fileName="btn.xml" pkg="bfsobnp3" xy="726,849">
+      <Button title="登录"/>
+    </component>
+    <component id="n10_lk2f" name="reqisterBtn" src="lk2f2" fileName="btn.xml" pkg="bfsobnp3" xy="978,849">
+      <Button title="注册"/>
+    </component>
+    <text id="n11_lk2f" name="n11" xy="638,233" size="643,186" fontSize="146" text="My Game"/>
+  </displayList>
+</component>

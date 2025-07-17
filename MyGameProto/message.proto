@@ -1,0 +1,19 @@
+syntax = "proto3";
+package proto;
+enum MsgId{
+    ID_FAIL=0;
+    ID_UserReqister=1;
+    ID_UserLogin=2;
+    ID_HeroInfo=3;
+    ID_HeroSwitch=4;
+    ID_UserHeadChange=5;
+    ID_Matching=6;
+    ID_ClientReady=7;
+    ID_GameStartDownTime=8;
+    ID_GameStart=9;
+    ID_BattleFrame=10;
+}
+
+enum battleOpType{
+    move=0;
+}

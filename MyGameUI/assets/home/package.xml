@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="bl738s84">
+  <resources>
+    <component id="lk2f0" name="HomePanel.xml" path="/" exported="true"/>
+    <component id="g3651" name="UserHeadPopup.xml" path="/" exported="true"/>
+    <component id="g3652" name="UserHeadItem.xml" path="/"/>
+  </resources>
+  <publish name="" genCode="true"/>
+</packageDescription>

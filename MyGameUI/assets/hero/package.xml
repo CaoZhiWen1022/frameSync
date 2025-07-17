@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="p2ty4wxq">
+  <resources>
+    <component id="g3650" name="HeroPanel.xml" path="/" exported="true"/>
+    <component id="g3651" name="HeroListItem.xml" path="/"/>
+  </resources>
+  <publish name="" genCode="true"/>
+</packageDescription>

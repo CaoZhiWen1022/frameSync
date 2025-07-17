@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <graph id="n0_lk2f" name="n0" xy="0,0" size="1920,1080" type="rect"/>
+    <component id="n2_lk2f" name="startGameBtn" src="lk2f2" fileName="btn.xml" pkg="bfsobnp3" xy="1517,828" size="360,226">
+      <Button title="START GAME" titleFontSize="64"/>
+    </component>
+    <graph id="n4_g365" name="spineRoot" xy="776,284" size="367,512"/>
+    <graph id="n5_g365" name="heroBtn" xy="776,284" size="367,512" alpha="0" type="rect"/>
+    <component id="n6_g365" name="head" src="g3655" fileName="UserHead.xml" pkg="bfsobnp3" xy="31,20"/>
+    <text id="n3_lk2f" name="userName" xy="152,42" size="10,54" fontSize="40" vars="true" text=""/>
+  </displayList>
+</component>

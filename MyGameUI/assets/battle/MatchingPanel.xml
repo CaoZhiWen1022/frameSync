@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <graph id="n2_lma8" name="n2" xy="0,0" size="1920,1080" alpha="0.3" type="rect" fillColor="#ff000000"/>
+    <text id="n5_lma8" name="n5" xy="714,102" size="492,118" fontSize="91" color="#ffffff" leading="0" letterSpacing="2" text="MATCHING"/>
+    <component id="n0_lma8" name="user1" src="g3655" fileName="UserHead.xml" pkg="bfsobnp3" xy="688,489"/>
+    <text id="n1_lma8" name="n1" xy="850,374" size="220,331" fontSize="200" color="#f52a2a" leading="-172" letterSpacing="2" text="V&#xA;  S"/>
+    <component id="n4_lma8" name="user2" src="g3655" fileName="UserHead.xml" pkg="bfsobnp3" xy="1134,489"/>
+  </displayList>
+</component>

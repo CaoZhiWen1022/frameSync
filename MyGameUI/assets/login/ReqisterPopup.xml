@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="717,732">
+  <displayList>
+    <graph id="n0_lk2f" name="n0" xy="0,0" size="717,732" type="rect"/>
+    <text id="n1_lk2f" name="n1" xy="284,43" size="148,49" fontSize="36" text="注册账号"/>
+    <text id="n2_lk2f" name="n2" xy="92,156" size="92,59" group="n5_lk2f" fontSize="44" text="账号"/>
+    <graph id="n3_lk2f" name="n3" xy="212,155" size="412,59" group="n5_lk2f" type="rect" fillColor="#ffcccccc"/>
+    <text id="n4_lk2f" name="account" xy="212,155" size="412,59" group="n5_lk2f" fontSize="44" autoSize="none" text="" input="true" prompt="输入账号"/>
+    <group id="n5_lk2f" name="n5" xy="92,155" size="532,60"/>
+    <text id="n6_lk2f" name="n6" xy="92,272" size="92,59" group="n9_lk2f" fontSize="44" text="密码"/>
+    <graph id="n7_lk2f" name="n7" xy="212,271" size="412,59" group="n9_lk2f" type="rect" fillColor="#ffcccccc"/>
+    <text id="n8_lk2f" name="password" xy="212,271" size="412,59" group="n9_lk2f" fontSize="44" autoSize="none" text="" input="true" prompt="输入密码" password="true"/>
+    <group id="n9_lk2f" name="n9" xy="92,271" size="532,60"/>
+    <text id="n10_lk2f" name="n10" xy="15,394" size="180,59" group="n13_lk2f" fontSize="44" text="确认密码"/>
+    <graph id="n11_lk2f" name="n11" xy="212,393" size="412,59" group="n13_lk2f" type="rect" fillColor="#ffcccccc"/>
+    <text id="n12_lk2f" name="password2" xy="212,393" size="412,59" group="n13_lk2f" fontSize="44" autoSize="none" text="" input="true" prompt="输入密码" password="true"/>
+    <group id="n13_lk2f" name="n13" xy="15,393" size="609,60"/>
+    <component id="n14_lk2f" name="tijiaoBtn" src="lk2f2" fileName="btn.xml" pkg="bfsobnp3" xy="232,631">
+      <Button title="提交"/>
+    </component>
+    <text id="n15_lk2f" name="n15" xy="92,496" size="92,59" group="n18_lk2f" fontSize="44" text="昵称"/>
+    <graph id="n16_lk2f" name="n16" xy="212,495" size="412,59" group="n18_lk2f" type="rect" fillColor="#ffcccccc"/>
+    <text id="n17_lk2f" name="name" xy="212,495" size="412,59" group="n18_lk2f" fontSize="44" autoSize="none" text="" input="true" prompt="输入昵称"/>
+    <group id="n18_lk2f" name="n18" xy="92,495" size="532,60"/>
+  </displayList>
+</component>

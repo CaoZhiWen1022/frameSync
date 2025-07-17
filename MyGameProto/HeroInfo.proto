@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package proto;
+
+message HeroInfo{
+    string heroId=1;
+}
+
+message HeroInfoReq{
+
+}
+
+message HeroInfoResp{
+    RetCode code = 1;
+   MsgId id = 2;
+    HeroInfo heroInfo=3;
+}
+
+message HeroSwitchReq{
+    string heroId=1;
+}
+
+message HeroSwitchResp{
+    RetCode code = 1;
+   MsgId id = 2;
+    HeroInfo heroInfo=3;
+}

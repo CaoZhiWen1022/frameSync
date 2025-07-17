@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <controller name="use" pages="0,,1," selected="0">
+    <remark page="0" value="使用中"/>
+    <remark page="1" value="使用"/>
+  </controller>
+  <displayList>
+    <graph id="n0_g365" name="n0" xy="0,0" size="1920,1080" type="rect" fillColor="#ff999999"/>
+    <list id="n2_g365" name="herols" xy="64,78" size="1020,941" layout="flow_hz" overflow="scroll" lineGap="30" colGap="30" defaultItem="ui://p2ty4wxqg3651" autoClearItems="true">
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+    <graph id="n3_g365" name="spineRoot" xy="1194,82" size="621,776"/>
+    <component id="n4_g365" name="useBtn" src="lk2f2" fileName="btn.xml" pkg="bfsobnp3" xy="1403,924">
+      <gearText controller="use" pages="0" values="使用中" default="使用"/>
+      <Button title="使用中"/>
+    </component>
+    <component id="n5_g365" name="closeBtn" src="lk2f2" fileName="btn.xml" pkg="bfsobnp3" xy="2,998">
+      <Button title="退出"/>
+    </component>
+  </displayList>
+</component>

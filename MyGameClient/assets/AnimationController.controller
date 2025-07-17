@@ -1,0 +1,47 @@
+{
+  "_$type": "Animator",
+  "enabled": true,
+  "path": "",
+  "cullingMode": 2,
+  "controllerLayers": [
+    {
+      "name": "Base Layer",
+      "states": [
+        {
+          "x": 10,
+          "y": 100,
+          "id": "-1",
+          "name": "进入",
+          "nexts": [],
+          "soloTransitions": [
+            {
+              "id": "0"
+            }
+          ]
+        },
+        {
+          "y": 153,
+          "id": "-2",
+          "name": "任何状态",
+          "x": 743
+        },
+        {
+          "x": 199,
+          "y": 104,
+          "_isLooping": 0,
+          "id": "0",
+          "name": "CINEMA_4D___",
+          "speed": 1,
+          "clipEnd": 1,
+          "clip": {
+            "_$uuid": "e9fba75e-0c8a-4543-8360-cc79f164583e@lani0"
+          }
+        }
+      ],
+      "playOnWake": true,
+      "blendingMode": 0,
+      "defaultWeight": 1
+    }
+  ],
+  "layerW": 150
+}

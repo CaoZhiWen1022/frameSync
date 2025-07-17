@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package proto;
+import "enum.proto";
+import "message.proto";
+
+message userHeadChangeReq{
+    string cfgId=1;
+}
+
+message userHeadChangeResp{
+    RetCode code = 1;
+   MsgId id = 2;
+    string headId=3;
+}

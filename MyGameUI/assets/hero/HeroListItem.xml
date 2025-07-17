@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="228,272" extention="Button">
+  <controller name="button" pages="2,up,3,down" selected="0"/>
+  <displayList>
+    <graph id="n1_g365" name="n1" xy="0,0" size="228,272" type="rect" fillColor="#ffcc9900"/>
+    <text id="n4_g365" name="heroName" xy="44,111" pivot="0.5,0.5" size="136,76" fontSize="58" text="1001"/>
+    <graph id="n5_g365" name="n5" xy="0,0" size="228,272" touchable="false" type="rect" lineSize="14" lineColor="#ffffff00" fillColor="#00ffffff">
+      <gearDisplay controller="button" pages="3"/>
+    </graph>
+  </displayList>
+  <Button mode="Radio"/>
+</component>

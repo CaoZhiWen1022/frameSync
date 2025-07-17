@@ -1,0 +1,14 @@
+{
+  "width": 1024,
+  "height": 1024,
+  "colorFormat": 0,
+  "depthFormat": 37,
+  "generateMipmap": false,
+  "multiSamples": 1,
+  "generateDepthTexture": false,
+  "sRGB": false,
+  "anisoLevel": 4,
+  "filterMode": 0,
+  "wrapModeU": 0,
+  "wrapModeV": 0
+}
