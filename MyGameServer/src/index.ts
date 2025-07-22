@@ -9,6 +9,7 @@ import { ClientMgr } from './ClientMgr';
 import { HeroInfo } from './modules/heroInfo';
 import { UserSetting } from './modules/userSetting';
 import { Battle } from './modules/battle/battle';
+import { Common } from './modules/common';
 
 interface WebSocketMessage {
     msgId: number;
@@ -43,6 +44,7 @@ class Server {
             new HeroInfo(),
             new UserSetting(),
             new Battle(),
+            new Common()
         ].reduce((map, module) => map.set(module.constructor.name, module), new Map());
     }
 
@@ -74,16 +76,16 @@ class Server {
         console.log(`WebSocket服务器正在监听端口 ${this.port}`);
     }
 
+    notVerifyLoginIds: number[] = [proto.MsgId.ID_UserLogin, proto.MsgId.ID_UserReqister, proto.MsgId.ID_Heartbeat];
+
     private async handleMessage(ws: WebSocket, message: WebSocketMessage) {
         const { msgId, ...data } = message;
-        console.log(`接收到消息: ${msgId}`, data);
-        if (msgId !== proto.MsgId.ID_UserLogin && msgId !== proto.MsgId.ID_UserReqister) {
+        // console.log(`接收到消息: ${msgId}`, data);
+        if (!this.notVerifyLoginIds.includes(msgId)) {
             let userId = ClientMgr.getUserId(ws);
-            console.log('userId:', userId);
-
             if (!userId) {
                 this.sendError(ws, '未登录');
-                return; 
+                return;
             }
         }
         try {

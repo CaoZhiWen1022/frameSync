@@ -727,9 +727,6 @@ export namespace proto {
     /** Properties of a battleMoveData. */
     interface IbattleMoveData {
 
-        /** battleMoveData start */
-        start?: (proto.Iv2|null);
-
         /** battleMoveData target */
         target?: (proto.Iv2|null);
     }
@@ -742,9 +739,6 @@ export namespace proto {
          * @param [properties] Properties to set
          */
         constructor(properties?: proto.IbattleMoveData);
-
-        /** battleMoveData start. */
-        public start?: (proto.Iv2|null);
 
         /** battleMoveData target. */
         public target?: (proto.Iv2|null);
@@ -827,309 +821,418 @@ export namespace proto {
         public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
-    /** Properties of a battleClientFrameData. */
-    interface IbattleClientFrameData {
+    /** Properties of a frameData. */
+    interface IframeData {
 
-        /** battleClientFrameData op */
+        /** frameData op */
         op?: (number|null);
 
-        /** battleClientFrameData moveData */
+        /** frameData moveData */
         moveData?: (proto.IbattleMoveData|null);
     }
 
-    /** Represents a battleClientFrameData. */
-    class battleClientFrameData implements IbattleClientFrameData {
+    /** Represents a frameData. */
+    class frameData implements IframeData {
 
         /**
-         * Constructs a new battleClientFrameData.
+         * Constructs a new frameData.
          * @param [properties] Properties to set
          */
-        constructor(properties?: proto.IbattleClientFrameData);
+        constructor(properties?: proto.IframeData);
 
-        /** battleClientFrameData op. */
+        /** frameData op. */
         public op: number;
 
-        /** battleClientFrameData moveData. */
+        /** frameData moveData. */
         public moveData?: (proto.IbattleMoveData|null);
 
         /**
-         * Creates a new battleClientFrameData instance using the specified properties.
+         * Creates a new frameData instance using the specified properties.
          * @param [properties] Properties to set
-         * @returns battleClientFrameData instance
+         * @returns frameData instance
          */
-        public static create(properties?: proto.IbattleClientFrameData): proto.battleClientFrameData;
+        public static create(properties?: proto.IframeData): proto.frameData;
 
         /**
-         * Encodes the specified battleClientFrameData message. Does not implicitly {@link proto.battleClientFrameData.verify|verify} messages.
-         * @param message battleClientFrameData message or plain object to encode
+         * Encodes the specified frameData message. Does not implicitly {@link proto.frameData.verify|verify} messages.
+         * @param message frameData message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: proto.IbattleClientFrameData, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: proto.IframeData, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified battleClientFrameData message, length delimited. Does not implicitly {@link proto.battleClientFrameData.verify|verify} messages.
-         * @param message battleClientFrameData message or plain object to encode
+         * Encodes the specified frameData message, length delimited. Does not implicitly {@link proto.frameData.verify|verify} messages.
+         * @param message frameData message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: proto.IbattleClientFrameData, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: proto.IframeData, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Decodes a battleClientFrameData message from the specified reader or buffer.
+         * Decodes a frameData message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns battleClientFrameData
+         * @returns frameData
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.battleClientFrameData;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.frameData;
 
         /**
-         * Decodes a battleClientFrameData message from the specified reader or buffer, length delimited.
+         * Decodes a frameData message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns battleClientFrameData
+         * @returns frameData
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.battleClientFrameData;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.frameData;
 
         /**
-         * Verifies a battleClientFrameData message.
+         * Verifies a frameData message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
         public static verify(message: { [k: string]: any }): (string|null);
 
         /**
-         * Creates a battleClientFrameData message from a plain object. Also converts values to their respective internal types.
+         * Creates a frameData message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
-         * @returns battleClientFrameData
+         * @returns frameData
          */
-        public static fromObject(object: { [k: string]: any }): proto.battleClientFrameData;
+        public static fromObject(object: { [k: string]: any }): proto.frameData;
 
         /**
-         * Creates a plain object from a battleClientFrameData message. Also converts values to other types if specified.
-         * @param message battleClientFrameData
+         * Creates a plain object from a frameData message. Also converts values to other types if specified.
+         * @param message frameData
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: proto.battleClientFrameData, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: proto.frameData, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
-         * Converts this battleClientFrameData to JSON.
+         * Converts this frameData to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for battleClientFrameData
+         * Gets the default type url for frameData
          * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
          * @returns The default type url
          */
         public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
-    /** Properties of a battleFrameReq. */
-    interface IbattleFrameReq {
+    /** Properties of a userFrameData. */
+    interface IuserFrameData {
 
-        /** battleFrameReq frameIndex */
-        frameIndex?: (number|null);
-
-        /** battleFrameReq data */
-        data?: (proto.IbattleClientFrameData|null);
-    }
-
-    /** Represents a battleFrameReq. */
-    class battleFrameReq implements IbattleFrameReq {
-
-        /**
-         * Constructs a new battleFrameReq.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: proto.IbattleFrameReq);
-
-        /** battleFrameReq frameIndex. */
-        public frameIndex: number;
-
-        /** battleFrameReq data. */
-        public data?: (proto.IbattleClientFrameData|null);
-
-        /**
-         * Creates a new battleFrameReq instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns battleFrameReq instance
-         */
-        public static create(properties?: proto.IbattleFrameReq): proto.battleFrameReq;
-
-        /**
-         * Encodes the specified battleFrameReq message. Does not implicitly {@link proto.battleFrameReq.verify|verify} messages.
-         * @param message battleFrameReq message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: proto.IbattleFrameReq, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified battleFrameReq message, length delimited. Does not implicitly {@link proto.battleFrameReq.verify|verify} messages.
-         * @param message battleFrameReq message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: proto.IbattleFrameReq, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a battleFrameReq message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns battleFrameReq
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.battleFrameReq;
-
-        /**
-         * Decodes a battleFrameReq message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns battleFrameReq
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.battleFrameReq;
-
-        /**
-         * Verifies a battleFrameReq message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a battleFrameReq message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns battleFrameReq
-         */
-        public static fromObject(object: { [k: string]: any }): proto.battleFrameReq;
-
-        /**
-         * Creates a plain object from a battleFrameReq message. Also converts values to other types if specified.
-         * @param message battleFrameReq
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: proto.battleFrameReq, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this battleFrameReq to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for battleFrameReq
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
-
-    /** Properties of a battleServerFrameData. */
-    interface IbattleServerFrameData {
-
-        /** battleServerFrameData userId */
+        /** userFrameData userId */
         userId?: (number|null);
 
-        /** battleServerFrameData data */
-        data?: (proto.IbattleClientFrameData|null);
+        /** userFrameData data */
+        data?: (proto.IframeData|null);
     }
 
-    /** Represents a battleServerFrameData. */
-    class battleServerFrameData implements IbattleServerFrameData {
+    /** Represents a userFrameData. */
+    class userFrameData implements IuserFrameData {
 
         /**
-         * Constructs a new battleServerFrameData.
+         * Constructs a new userFrameData.
          * @param [properties] Properties to set
          */
-        constructor(properties?: proto.IbattleServerFrameData);
+        constructor(properties?: proto.IuserFrameData);
 
-        /** battleServerFrameData userId. */
+        /** userFrameData userId. */
         public userId: number;
 
-        /** battleServerFrameData data. */
-        public data?: (proto.IbattleClientFrameData|null);
+        /** userFrameData data. */
+        public data?: (proto.IframeData|null);
 
         /**
-         * Creates a new battleServerFrameData instance using the specified properties.
+         * Creates a new userFrameData instance using the specified properties.
          * @param [properties] Properties to set
-         * @returns battleServerFrameData instance
+         * @returns userFrameData instance
          */
-        public static create(properties?: proto.IbattleServerFrameData): proto.battleServerFrameData;
+        public static create(properties?: proto.IuserFrameData): proto.userFrameData;
 
         /**
-         * Encodes the specified battleServerFrameData message. Does not implicitly {@link proto.battleServerFrameData.verify|verify} messages.
-         * @param message battleServerFrameData message or plain object to encode
+         * Encodes the specified userFrameData message. Does not implicitly {@link proto.userFrameData.verify|verify} messages.
+         * @param message userFrameData message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: proto.IbattleServerFrameData, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: proto.IuserFrameData, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified battleServerFrameData message, length delimited. Does not implicitly {@link proto.battleServerFrameData.verify|verify} messages.
-         * @param message battleServerFrameData message or plain object to encode
+         * Encodes the specified userFrameData message, length delimited. Does not implicitly {@link proto.userFrameData.verify|verify} messages.
+         * @param message userFrameData message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: proto.IbattleServerFrameData, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: proto.IuserFrameData, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Decodes a battleServerFrameData message from the specified reader or buffer.
+         * Decodes a userFrameData message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns battleServerFrameData
+         * @returns userFrameData
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.battleServerFrameData;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.userFrameData;
 
         /**
-         * Decodes a battleServerFrameData message from the specified reader or buffer, length delimited.
+         * Decodes a userFrameData message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns battleServerFrameData
+         * @returns userFrameData
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.battleServerFrameData;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.userFrameData;
 
         /**
-         * Verifies a battleServerFrameData message.
+         * Verifies a userFrameData message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
         public static verify(message: { [k: string]: any }): (string|null);
 
         /**
-         * Creates a battleServerFrameData message from a plain object. Also converts values to their respective internal types.
+         * Creates a userFrameData message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
-         * @returns battleServerFrameData
+         * @returns userFrameData
          */
-        public static fromObject(object: { [k: string]: any }): proto.battleServerFrameData;
+        public static fromObject(object: { [k: string]: any }): proto.userFrameData;
 
         /**
-         * Creates a plain object from a battleServerFrameData message. Also converts values to other types if specified.
-         * @param message battleServerFrameData
+         * Creates a plain object from a userFrameData message. Also converts values to other types if specified.
+         * @param message userFrameData
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: proto.battleServerFrameData, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: proto.userFrameData, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
-         * Converts this battleServerFrameData to JSON.
+         * Converts this userFrameData to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for battleServerFrameData
+         * Gets the default type url for userFrameData
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    /** Properties of a frameDataGather. */
+    interface IframeDataGather {
+
+        /** frameDataGather frameIndex */
+        frameIndex?: (number|null);
+
+        /** frameDataGather frameAt */
+        frameAt?: (number|Long|null);
+
+        /** frameDataGather frameData */
+        frameData?: (proto.IuserFrameData[]|null);
+    }
+
+    /** Represents a frameDataGather. */
+    class frameDataGather implements IframeDataGather {
+
+        /**
+         * Constructs a new frameDataGather.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.IframeDataGather);
+
+        /** frameDataGather frameIndex. */
+        public frameIndex: number;
+
+        /** frameDataGather frameAt. */
+        public frameAt: (number|Long);
+
+        /** frameDataGather frameData. */
+        public frameData: proto.IuserFrameData[];
+
+        /**
+         * Creates a new frameDataGather instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns frameDataGather instance
+         */
+        public static create(properties?: proto.IframeDataGather): proto.frameDataGather;
+
+        /**
+         * Encodes the specified frameDataGather message. Does not implicitly {@link proto.frameDataGather.verify|verify} messages.
+         * @param message frameDataGather message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: proto.IframeDataGather, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified frameDataGather message, length delimited. Does not implicitly {@link proto.frameDataGather.verify|verify} messages.
+         * @param message frameDataGather message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: proto.IframeDataGather, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a frameDataGather message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns frameDataGather
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.frameDataGather;
+
+        /**
+         * Decodes a frameDataGather message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns frameDataGather
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.frameDataGather;
+
+        /**
+         * Verifies a frameDataGather message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a frameDataGather message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns frameDataGather
+         */
+        public static fromObject(object: { [k: string]: any }): proto.frameDataGather;
+
+        /**
+         * Creates a plain object from a frameDataGather message. Also converts values to other types if specified.
+         * @param message frameDataGather
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: proto.frameDataGather, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this frameDataGather to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for frameDataGather
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    /** Properties of a battleFrameDataInputReq. */
+    interface IbattleFrameDataInputReq {
+
+        /** battleFrameDataInputReq frameIndex */
+        frameIndex?: (number|null);
+
+        /** battleFrameDataInputReq data */
+        data?: (proto.IframeData|null);
+    }
+
+    /** Represents a battleFrameDataInputReq. */
+    class battleFrameDataInputReq implements IbattleFrameDataInputReq {
+
+        /**
+         * Constructs a new battleFrameDataInputReq.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.IbattleFrameDataInputReq);
+
+        /** battleFrameDataInputReq frameIndex. */
+        public frameIndex: number;
+
+        /** battleFrameDataInputReq data. */
+        public data?: (proto.IframeData|null);
+
+        /**
+         * Creates a new battleFrameDataInputReq instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns battleFrameDataInputReq instance
+         */
+        public static create(properties?: proto.IbattleFrameDataInputReq): proto.battleFrameDataInputReq;
+
+        /**
+         * Encodes the specified battleFrameDataInputReq message. Does not implicitly {@link proto.battleFrameDataInputReq.verify|verify} messages.
+         * @param message battleFrameDataInputReq message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: proto.IbattleFrameDataInputReq, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified battleFrameDataInputReq message, length delimited. Does not implicitly {@link proto.battleFrameDataInputReq.verify|verify} messages.
+         * @param message battleFrameDataInputReq message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: proto.IbattleFrameDataInputReq, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a battleFrameDataInputReq message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns battleFrameDataInputReq
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.battleFrameDataInputReq;
+
+        /**
+         * Decodes a battleFrameDataInputReq message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns battleFrameDataInputReq
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.battleFrameDataInputReq;
+
+        /**
+         * Verifies a battleFrameDataInputReq message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a battleFrameDataInputReq message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns battleFrameDataInputReq
+         */
+        public static fromObject(object: { [k: string]: any }): proto.battleFrameDataInputReq;
+
+        /**
+         * Creates a plain object from a battleFrameDataInputReq message. Also converts values to other types if specified.
+         * @param message battleFrameDataInputReq
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: proto.battleFrameDataInputReq, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this battleFrameDataInputReq to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for battleFrameDataInputReq
          * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
          * @returns The default type url
          */
@@ -1145,11 +1248,8 @@ export namespace proto {
         /** battleFrameResp id */
         id?: (proto.MsgId|null);
 
-        /** battleFrameResp frameIndex */
-        frameIndex?: (number|null);
-
         /** battleFrameResp data */
-        data?: (proto.IbattleServerFrameData[]|null);
+        data?: (proto.IframeDataGather|null);
     }
 
     /** Represents a battleFrameResp. */
@@ -1167,11 +1267,8 @@ export namespace proto {
         /** battleFrameResp id. */
         public id: proto.MsgId;
 
-        /** battleFrameResp frameIndex. */
-        public frameIndex: number;
-
         /** battleFrameResp data. */
-        public data: proto.IbattleServerFrameData[];
+        public data?: (proto.IframeDataGather|null);
 
         /**
          * Creates a new battleFrameResp instance using the specified properties.
@@ -1251,6 +1348,212 @@ export namespace proto {
         public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
+    /** Properties of a getBattleFrameDataReq. */
+    interface IgetBattleFrameDataReq {
+
+        /** getBattleFrameDataReq frameIndex */
+        frameIndex?: (number|null);
+    }
+
+    /** Represents a getBattleFrameDataReq. */
+    class getBattleFrameDataReq implements IgetBattleFrameDataReq {
+
+        /**
+         * Constructs a new getBattleFrameDataReq.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.IgetBattleFrameDataReq);
+
+        /** getBattleFrameDataReq frameIndex. */
+        public frameIndex: number;
+
+        /**
+         * Creates a new getBattleFrameDataReq instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns getBattleFrameDataReq instance
+         */
+        public static create(properties?: proto.IgetBattleFrameDataReq): proto.getBattleFrameDataReq;
+
+        /**
+         * Encodes the specified getBattleFrameDataReq message. Does not implicitly {@link proto.getBattleFrameDataReq.verify|verify} messages.
+         * @param message getBattleFrameDataReq message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: proto.IgetBattleFrameDataReq, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified getBattleFrameDataReq message, length delimited. Does not implicitly {@link proto.getBattleFrameDataReq.verify|verify} messages.
+         * @param message getBattleFrameDataReq message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: proto.IgetBattleFrameDataReq, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a getBattleFrameDataReq message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns getBattleFrameDataReq
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.getBattleFrameDataReq;
+
+        /**
+         * Decodes a getBattleFrameDataReq message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns getBattleFrameDataReq
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.getBattleFrameDataReq;
+
+        /**
+         * Verifies a getBattleFrameDataReq message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a getBattleFrameDataReq message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns getBattleFrameDataReq
+         */
+        public static fromObject(object: { [k: string]: any }): proto.getBattleFrameDataReq;
+
+        /**
+         * Creates a plain object from a getBattleFrameDataReq message. Also converts values to other types if specified.
+         * @param message getBattleFrameDataReq
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: proto.getBattleFrameDataReq, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this getBattleFrameDataReq to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for getBattleFrameDataReq
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    /** Properties of a getBattleFrameDataResp. */
+    interface IgetBattleFrameDataResp {
+
+        /** getBattleFrameDataResp code */
+        code?: (proto.RetCode|null);
+
+        /** getBattleFrameDataResp id */
+        id?: (proto.MsgId|null);
+
+        /** getBattleFrameDataResp data */
+        data?: (proto.IframeDataGather[]|null);
+    }
+
+    /** Represents a getBattleFrameDataResp. */
+    class getBattleFrameDataResp implements IgetBattleFrameDataResp {
+
+        /**
+         * Constructs a new getBattleFrameDataResp.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.IgetBattleFrameDataResp);
+
+        /** getBattleFrameDataResp code. */
+        public code: proto.RetCode;
+
+        /** getBattleFrameDataResp id. */
+        public id: proto.MsgId;
+
+        /** getBattleFrameDataResp data. */
+        public data: proto.IframeDataGather[];
+
+        /**
+         * Creates a new getBattleFrameDataResp instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns getBattleFrameDataResp instance
+         */
+        public static create(properties?: proto.IgetBattleFrameDataResp): proto.getBattleFrameDataResp;
+
+        /**
+         * Encodes the specified getBattleFrameDataResp message. Does not implicitly {@link proto.getBattleFrameDataResp.verify|verify} messages.
+         * @param message getBattleFrameDataResp message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: proto.IgetBattleFrameDataResp, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified getBattleFrameDataResp message, length delimited. Does not implicitly {@link proto.getBattleFrameDataResp.verify|verify} messages.
+         * @param message getBattleFrameDataResp message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: proto.IgetBattleFrameDataResp, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a getBattleFrameDataResp message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns getBattleFrameDataResp
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.getBattleFrameDataResp;
+
+        /**
+         * Decodes a getBattleFrameDataResp message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns getBattleFrameDataResp
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.getBattleFrameDataResp;
+
+        /**
+         * Verifies a getBattleFrameDataResp message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a getBattleFrameDataResp message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns getBattleFrameDataResp
+         */
+        public static fromObject(object: { [k: string]: any }): proto.getBattleFrameDataResp;
+
+        /**
+         * Creates a plain object from a getBattleFrameDataResp message. Also converts values to other types if specified.
+         * @param message getBattleFrameDataResp
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: proto.getBattleFrameDataResp, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this getBattleFrameDataResp to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for getBattleFrameDataResp
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
     /** RetCode enum. */
     enum RetCode {
         SUCCESS = 0,
@@ -1272,12 +1575,142 @@ export namespace proto {
         ID_ClientReady = 7,
         ID_GameStartDownTime = 8,
         ID_GameStart = 9,
-        ID_BattleFrame = 10
+        ID_BattleFrameDataInput = 10,
+        ID_BattleFrameDataUpdate = 11,
+        ID_GET_BattleFrameData = 12,
+        ID_Heartbeat = 13
     }
 
     /** battleOpType enum. */
     enum battleOpType {
         move = 0
+    }
+
+    /** Properties of a UserInfo. */
+    interface IUserInfo {
+
+        /** UserInfo id */
+        id?: (number|null);
+
+        /** UserInfo userName */
+        userName?: (string|null);
+
+        /** UserInfo createTime */
+        createTime?: (number|null);
+
+        /** UserInfo account */
+        account?: (string|null);
+
+        /** UserInfo head */
+        head?: (string|null);
+
+        /** UserInfo password */
+        password?: (string|null);
+    }
+
+    /** Represents a UserInfo. */
+    class UserInfo implements IUserInfo {
+
+        /**
+         * Constructs a new UserInfo.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.IUserInfo);
+
+        /** UserInfo id. */
+        public id: number;
+
+        /** UserInfo userName. */
+        public userName: string;
+
+        /** UserInfo createTime. */
+        public createTime: number;
+
+        /** UserInfo account. */
+        public account: string;
+
+        /** UserInfo head. */
+        public head: string;
+
+        /** UserInfo password. */
+        public password: string;
+
+        /**
+         * Creates a new UserInfo instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns UserInfo instance
+         */
+        public static create(properties?: proto.IUserInfo): proto.UserInfo;
+
+        /**
+         * Encodes the specified UserInfo message. Does not implicitly {@link proto.UserInfo.verify|verify} messages.
+         * @param message UserInfo message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: proto.IUserInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified UserInfo message, length delimited. Does not implicitly {@link proto.UserInfo.verify|verify} messages.
+         * @param message UserInfo message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: proto.IUserInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a UserInfo message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns UserInfo
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.UserInfo;
+
+        /**
+         * Decodes a UserInfo message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns UserInfo
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.UserInfo;
+
+        /**
+         * Verifies a UserInfo message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a UserInfo message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns UserInfo
+         */
+        public static fromObject(object: { [k: string]: any }): proto.UserInfo;
+
+        /**
+         * Creates a plain object from a UserInfo message. Also converts values to other types if specified.
+         * @param message UserInfo
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: proto.UserInfo, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this UserInfo to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for UserInfo
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a CommonResp. */
@@ -1571,6 +2004,200 @@ export namespace proto {
 
         /**
          * Gets the default type url for CommonFailResp
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    /** Properties of a HeartbeatReq. */
+    interface IHeartbeatReq {
+    }
+
+    /** Represents a HeartbeatReq. */
+    class HeartbeatReq implements IHeartbeatReq {
+
+        /**
+         * Constructs a new HeartbeatReq.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.IHeartbeatReq);
+
+        /**
+         * Creates a new HeartbeatReq instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns HeartbeatReq instance
+         */
+        public static create(properties?: proto.IHeartbeatReq): proto.HeartbeatReq;
+
+        /**
+         * Encodes the specified HeartbeatReq message. Does not implicitly {@link proto.HeartbeatReq.verify|verify} messages.
+         * @param message HeartbeatReq message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: proto.IHeartbeatReq, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified HeartbeatReq message, length delimited. Does not implicitly {@link proto.HeartbeatReq.verify|verify} messages.
+         * @param message HeartbeatReq message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: proto.IHeartbeatReq, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a HeartbeatReq message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns HeartbeatReq
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.HeartbeatReq;
+
+        /**
+         * Decodes a HeartbeatReq message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns HeartbeatReq
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.HeartbeatReq;
+
+        /**
+         * Verifies a HeartbeatReq message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a HeartbeatReq message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns HeartbeatReq
+         */
+        public static fromObject(object: { [k: string]: any }): proto.HeartbeatReq;
+
+        /**
+         * Creates a plain object from a HeartbeatReq message. Also converts values to other types if specified.
+         * @param message HeartbeatReq
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: proto.HeartbeatReq, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this HeartbeatReq to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for HeartbeatReq
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    /** Properties of a HeartbeatResp. */
+    interface IHeartbeatResp {
+
+        /** HeartbeatResp code */
+        code?: (proto.RetCode|null);
+
+        /** HeartbeatResp id */
+        id?: (proto.MsgId|null);
+    }
+
+    /** Represents a HeartbeatResp. */
+    class HeartbeatResp implements IHeartbeatResp {
+
+        /**
+         * Constructs a new HeartbeatResp.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.IHeartbeatResp);
+
+        /** HeartbeatResp code. */
+        public code: proto.RetCode;
+
+        /** HeartbeatResp id. */
+        public id: proto.MsgId;
+
+        /**
+         * Creates a new HeartbeatResp instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns HeartbeatResp instance
+         */
+        public static create(properties?: proto.IHeartbeatResp): proto.HeartbeatResp;
+
+        /**
+         * Encodes the specified HeartbeatResp message. Does not implicitly {@link proto.HeartbeatResp.verify|verify} messages.
+         * @param message HeartbeatResp message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: proto.IHeartbeatResp, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified HeartbeatResp message, length delimited. Does not implicitly {@link proto.HeartbeatResp.verify|verify} messages.
+         * @param message HeartbeatResp message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: proto.IHeartbeatResp, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a HeartbeatResp message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns HeartbeatResp
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.HeartbeatResp;
+
+        /**
+         * Decodes a HeartbeatResp message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns HeartbeatResp
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.HeartbeatResp;
+
+        /**
+         * Verifies a HeartbeatResp message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a HeartbeatResp message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns HeartbeatResp
+         */
+        public static fromObject(object: { [k: string]: any }): proto.HeartbeatResp;
+
+        /**
+         * Creates a plain object from a HeartbeatResp message. Also converts values to other types if specified.
+         * @param message HeartbeatResp
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: proto.HeartbeatResp, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this HeartbeatResp to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for HeartbeatResp
          * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
          * @returns The default type url
          */
@@ -2498,127 +3125,6 @@ export namespace proto {
 
         /**
          * Gets the default type url for LoginResp
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
-
-    /** Properties of a UserInfo. */
-    interface IUserInfo {
-
-        /** UserInfo id */
-        id?: (number|null);
-
-        /** UserInfo userName */
-        userName?: (string|null);
-
-        /** UserInfo createTime */
-        createTime?: (number|null);
-
-        /** UserInfo account */
-        account?: (string|null);
-
-        /** UserInfo head */
-        head?: (string|null);
-    }
-
-    /** Represents a UserInfo. */
-    class UserInfo implements IUserInfo {
-
-        /**
-         * Constructs a new UserInfo.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: proto.IUserInfo);
-
-        /** UserInfo id. */
-        public id: number;
-
-        /** UserInfo userName. */
-        public userName: string;
-
-        /** UserInfo createTime. */
-        public createTime: number;
-
-        /** UserInfo account. */
-        public account: string;
-
-        /** UserInfo head. */
-        public head: string;
-
-        /**
-         * Creates a new UserInfo instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns UserInfo instance
-         */
-        public static create(properties?: proto.IUserInfo): proto.UserInfo;
-
-        /**
-         * Encodes the specified UserInfo message. Does not implicitly {@link proto.UserInfo.verify|verify} messages.
-         * @param message UserInfo message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: proto.IUserInfo, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified UserInfo message, length delimited. Does not implicitly {@link proto.UserInfo.verify|verify} messages.
-         * @param message UserInfo message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: proto.IUserInfo, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a UserInfo message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns UserInfo
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.UserInfo;
-
-        /**
-         * Decodes a UserInfo message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns UserInfo
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.UserInfo;
-
-        /**
-         * Verifies a UserInfo message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a UserInfo message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns UserInfo
-         */
-        public static fromObject(object: { [k: string]: any }): proto.UserInfo;
-
-        /**
-         * Creates a plain object from a UserInfo message. Also converts values to other types if specified.
-         * @param message UserInfo
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: proto.UserInfo, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this UserInfo to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for UserInfo
          * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
          * @returns The default type url
          */

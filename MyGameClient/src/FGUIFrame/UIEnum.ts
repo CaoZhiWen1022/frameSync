@@ -16,6 +16,7 @@ export enum UIID {
     popup1 = 10000,
     ReqisterPopup,
     UserHeadPopup,
+    CommonPopup,
 }
 
 /** ui类型 */

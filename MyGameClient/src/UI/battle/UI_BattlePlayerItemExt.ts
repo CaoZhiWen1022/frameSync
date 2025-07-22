@@ -1,6 +1,7 @@
 import { HeroSpineObj, HeroSpinePlayType } from "../../common/HeroSpineObj";
 import UI_BattlePlayerItem from "../../FGUI/battle/UI_BattlePlayerItem";
 import { LoginLogic } from "../../Logic/LoginLogic";
+import { userInfo } from "../../Logic/UserInfo";
 
 export class UI_BattlePlayerItemExt extends UI_BattlePlayerItem {
 
@@ -8,7 +9,7 @@ export class UI_BattlePlayerItemExt extends UI_BattlePlayerItem {
     heroId: string;
     spineObj: HeroSpineObj;
     init(userId: number, heroId: string) {
-        this.m_isMy.selectedIndex = userId == LoginLogic.userInfo.id ? 0 : 1;
+        this.m_isMy.selectedIndex = userId == userInfo.userInfo.id ? 0 : 1;
         return new Promise<void>((resolve, reject) => {
             this.userId = userId;
             this.heroId = heroId;

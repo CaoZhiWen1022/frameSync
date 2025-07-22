@@ -3,6 +3,7 @@ syntax = "proto3";
 package proto;
 import "enum.proto";
 import "message.proto";
+import "user.proto";
 
 message BattleUserInfo{
     UserInfo userInfo=1;
@@ -41,38 +42,42 @@ message v2{
 }
 
 message battleMoveData{
-    v2 target=2;
+    v2 target=1;
 }
 
-message battleClientFrameData{
+message frameData{
     int32 op=1;
     battleMoveData moveData=2;
 }
 
-message battleFrameReq{
-    int32 frameIndex=1;
-    battleClientFrameData data=2;
+message userFrameData{
+    int32 userId=1;
+    frameData data=2;
 }
 
-message battleServerFrameData{
-    int32 userId=1;
-    battleClientFrameData data=2;
+message frameDataGather{
+    int32 frameIndex=1;
+    int64 frameAt=2;
+    repeated userFrameData frameData=3;
+}
+
+message battleFrameDataInputReq{
+    int32 frameIndex=1;
+    frameData data=2;
 }
 
 message battleFrameResp{
     RetCode code = 1;
    MsgId id = 2;
-   int32 frameIndex=3;
-  repeated battleServerFrameData data=4;
+   frameDataGather data=3;
 }
 
-message battleFrameAllReq{
-    int32 clientFrame=1;
+message getBattleFrameDataReq{
+    int32 frameIndex=1;
 }
 
-
-message battleFrameAllResp{
+message getBattleFrameDataResp{
     RetCode code = 1;
    MsgId id = 2;
-   
+  repeated frameDataGather data=3;
 }

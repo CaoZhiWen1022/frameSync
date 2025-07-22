@@ -35,24 +35,30 @@ export class BattleLogic {
         GameEventMgr.instance.event(GameEventType.GameStart);
     }
 
-    /** 同步操作给服务器 */
-    static battleFrameReq(msg: proto.IbattleFrameReq) {
-        let req = proto.battleFrameReq.create(msg);
-        GameNetMgr.instance.send(proto.MsgId.ID_BattleFrame, req);
-    }
-
     static moveReq(target: proto.Iv2) {
-        let req = proto.battleFrameReq.create();
-        req.data = proto.battleClientFrameData.create();
+        let req = proto.battleFrameDataInputReq.create();
+        req.data = proto.frameData.create();
         req.data.op = proto.battleOpType.move;
         req.data.moveData = proto.battleMoveData.create();
         req.data.moveData.target = target;
         req.frameIndex = BattleMgr.ins.battleFrameSyncMgr.frame;
-        GameNetMgr.instance.send(proto.MsgId.ID_BattleFrame, req);
+        GameNetMgr.instance.send(proto.MsgId.ID_BattleFrameDataInput, req);
     }
 
-    static battleFrameResp(msg: proto.battleFrameResp) {
+    static battleFrameDataUpdate(msg: proto.battleFrameResp) {
         //分发帧数据
-        GameEventMgr.instance.event(GameEventType.BattleFrameData, msg);
+        GameEventMgr.instance.event(GameEventType.BattleFrameDataUpdate, msg);
+    }
+
+    /** 请求帧数据 */
+    static getBattleFrameDataReq(frameIndex: number) {
+        let req = proto.getBattleFrameDataReq.create({ frameIndex: frameIndex })
+        GameNetMgr.instance.send(proto.MsgId.ID_GET_BattleFrameData, req);
+    }
+
+    /** 请求帧数据回调 */
+    static getBattleFrameDataResp(msg: proto.getBattleFrameDataResp) {
+        console.log('请求帧数据回调', msg);
+        GameEventMgr.instance.event(GameEventType.GET_BattleFrameDataResp, msg);
     }
 }

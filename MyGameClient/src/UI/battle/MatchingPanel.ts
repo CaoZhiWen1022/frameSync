@@ -7,6 +7,7 @@ import { UIMgr } from "../../FGUIFrame/UIMgr";
 import { UIPanel } from "../../FGUIFrame/UIPanel";
 import { BattleLogic } from "../../Logic/battleLogic";
 import { LoginLogic } from "../../Logic/LoginLogic";
+import { userInfo } from "../../Logic/UserInfo";
 import { proto } from "../../protos/proto";
 
 export class MatchingPanel extends UIPanel {
@@ -20,7 +21,7 @@ export class MatchingPanel extends UIPanel {
     }
 
     init() {
-        (this.m_ui.m_user1 as UI_UserHead).m_icon.url = getUserHeadUrl(LoginLogic.userInfo.head);
+        (this.m_ui.m_user1 as UI_UserHead).m_icon.url = getUserHeadUrl(userInfo.userInfo.head);
         //发起匹配
         BattleLogic.mathchingReq();
 
@@ -29,7 +30,7 @@ export class MatchingPanel extends UIPanel {
     }
 
     matchSuccess(users: proto.IBattleUserInfo[]) {
-        let enemy = users.find(v => v.userInfo.id != LoginLogic.userInfo.id);
+        let enemy = users.find(v => v.userInfo.id != userInfo.userInfo.id);
         if (enemy) (this.m_ui.m_user2 as UI_UserHead).m_icon.url = getUserHeadUrl(enemy.userInfo.head);
     }
 

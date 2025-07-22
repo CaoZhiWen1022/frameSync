@@ -3,6 +3,7 @@ import { ClientMgr } from "../../ClientMgr";
 import { proto } from "../../protos/proto";
 import { mySql } from "../../mySql/MySQL";
 import { SQL_User, SQL_UserHero } from "../../mySql/SQL";
+import { EventMgr, EventType } from "../../EventMgr";
 
 export class BattleRoom {
 
@@ -11,7 +12,13 @@ export class BattleRoom {
         return this._roomIndex++;
     }
 
-    public static roomPlayerCountMax = 1;
+    /** 房间人数 */
+    public static roomPlayerCountMax = 2;
+
+    /** 最大容忍帧差，超过后舍弃客户端操作 */
+    public static MAX_FRAME_DIFF_COUNT = 10;
+
+    private static PACKET_LOSS = 0;
 
     roomId: number;
 
@@ -21,9 +28,12 @@ export class BattleRoom {
 
     frameInterval = 33;
     frameIndex: number = 0;
-    allFrameData: proto.IbattleServerFrameData[] = [];
 
-    clientFrameDatas: proto.IbattleServerFrameData[] = [];
+    allFrameData: proto.IframeDataGather[] = [];
+
+    curInputFrameData: proto.frameDataGather;
+
+    updateFrameTimeout: NodeJS.Timeout;
 
     constructor() {
         this.roomId = BattleRoom.roomIndex;
@@ -34,6 +44,10 @@ export class BattleRoom {
         if (this.players.length == BattleRoom.roomPlayerCountMax) {
             this.matchResp();
         }
+    }
+
+    removePlayer(player: number) {
+        this.players = this.players.filter(v => v != player);
     }
 
     /** 匹配成功 */
@@ -104,7 +118,7 @@ export class BattleRoom {
                         });
                     }
                 })
-                setInterval(() => { this.updateFrame() }, this.frameInterval);
+                this.updateFrameTimeout = setInterval(() => { this.updateFrame() }, this.frameInterval);
             } else {
                 this.players.forEach(v => {
                     let ws = ClientMgr.getClient(v);
@@ -123,13 +137,16 @@ export class BattleRoom {
         }, 1000);
     }
 
-    clientFrameData(userId: number, data: proto.battleFrameReq) {
-        if (data.frameIndex != this.frameIndex - 1) {
-            console.log('帧数据不匹配', data.frameIndex, this.frameIndex);
-            //通知该客户端帧滞后，需要追帧
+    frameDataInput(userId: number, data: proto.battleFrameDataInputReq) {
+        console.log('收到帧数据,frameIndex:', this.frameIndex, data.frameIndex);
+
+        let frameIndex = data.frameIndex;
+        if (frameIndex + BattleRoom.MAX_FRAME_DIFF_COUNT < this.frameIndex) {
             return;
         }
-        this.clientFrameDatas.push({
+        this.checkCurInputFrameData();
+        let ls = this.curInputFrameData.frameData;
+        ls.push({
             userId: userId,
             data: data.data
         });
@@ -139,19 +156,33 @@ export class BattleRoom {
         // console.log('更新帧数据');
 
         //收集的帧数据回传给客户端
+        this.checkCurInputFrameData();
         let data: proto.IbattleFrameResp = {
-            id: proto.MsgId.ID_BattleFrame,
+            id: proto.MsgId.ID_BattleFrameDataUpdate,
             code: proto.RetCode.SUCCESS,
-            frameIndex: this.frameIndex,
-            data: this.clientFrameDatas
+            data: this.curInputFrameData
         }
         this.players.forEach(v => {
             let ws = ClientMgr.getClient(v);
-            if (ws) {
+            if (ws && Math.random() > BattleRoom.PACKET_LOSS) {
                 SendResponse(ws, data);
             }
         })
-        this.clientFrameDatas.length = 0;
+        this.allFrameData.push(this.curInputFrameData);
         this.frameIndex++;
+        this.curInputFrameData = null;
+    }
+
+    checkCurInputFrameData() {
+        if (!this.curInputFrameData) {
+            this.curInputFrameData = proto.frameDataGather.create();
+            this.curInputFrameData.frameIndex = this.frameIndex;
+            this.curInputFrameData.frameAt = Date.now();
+        }
+    }
+
+    dispose() {
+        console.log('房间销毁', this.roomId);
+        clearInterval(this.updateFrameTimeout);
     }
 }

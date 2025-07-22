@@ -637,6 +637,9 @@ $root.proto = (function() {
                 case 8:
                 case 9:
                 case 10:
+                case 11:
+                case 12:
+                case 13:
                     break;
                 }
             if (message.roomId != null && message.hasOwnProperty("roomId"))
@@ -741,9 +744,21 @@ $root.proto = (function() {
             case 9:
                 message.id = 9;
                 break;
-            case "ID_BattleFrame":
+            case "ID_BattleFrameDataInput":
             case 10:
                 message.id = 10;
+                break;
+            case "ID_BattleFrameDataUpdate":
+            case 11:
+                message.id = 11;
+                break;
+            case "ID_GET_BattleFrameData":
+            case 12:
+                message.id = 12;
+                break;
+            case "ID_Heartbeat":
+            case 13:
+                message.id = 13;
                 break;
             }
             if (object.roomId != null)
@@ -1232,6 +1247,9 @@ $root.proto = (function() {
                 case 8:
                 case 9:
                 case 10:
+                case 11:
+                case 12:
+                case 13:
                     break;
                 }
             if (message.time != null && message.hasOwnProperty("time"))
@@ -1327,9 +1345,21 @@ $root.proto = (function() {
             case 9:
                 message.id = 9;
                 break;
-            case "ID_BattleFrame":
+            case "ID_BattleFrameDataInput":
             case 10:
                 message.id = 10;
+                break;
+            case "ID_BattleFrameDataUpdate":
+            case 11:
+                message.id = 11;
+                break;
+            case "ID_GET_BattleFrameData":
+            case 12:
+                message.id = 12;
+                break;
+            case "ID_Heartbeat":
+            case 13:
+                message.id = 13;
                 break;
             }
             if (object.time != null)
@@ -1567,6 +1597,9 @@ $root.proto = (function() {
                 case 8:
                 case 9:
                 case 10:
+                case 11:
+                case 12:
+                case 13:
                     break;
                 }
             return null;
@@ -1659,9 +1692,21 @@ $root.proto = (function() {
             case 9:
                 message.id = 9;
                 break;
-            case "ID_BattleFrame":
+            case "ID_BattleFrameDataInput":
             case 10:
                 message.id = 10;
+                break;
+            case "ID_BattleFrameDataUpdate":
+            case 11:
+                message.id = 11;
+                break;
+            case "ID_GET_BattleFrameData":
+            case 12:
+                message.id = 12;
+                break;
+            case "ID_Heartbeat":
+            case 13:
+                message.id = 13;
                 break;
             }
             return message;
@@ -2006,7 +2051,7 @@ $root.proto = (function() {
             if (!writer)
                 writer = $Writer.create();
             if (message.target != null && Object.hasOwnProperty.call(message, "target"))
-                $root.proto.v2.encode(message.target, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                $root.proto.v2.encode(message.target, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
             return writer;
         };
 
@@ -2043,7 +2088,7 @@ $root.proto = (function() {
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
-                case 2: {
+                case 1: {
                         message.target = $root.proto.v2.decode(reader, reader.uint32());
                         break;
                     }
@@ -2159,25 +2204,25 @@ $root.proto = (function() {
         return battleMoveData;
     })();
 
-    proto.battleClientFrameData = (function() {
+    proto.frameData = (function() {
 
         /**
-         * Properties of a battleClientFrameData.
+         * Properties of a frameData.
          * @memberof proto
-         * @interface IbattleClientFrameData
-         * @property {number|null} [op] battleClientFrameData op
-         * @property {proto.IbattleMoveData|null} [moveData] battleClientFrameData moveData
+         * @interface IframeData
+         * @property {number|null} [op] frameData op
+         * @property {proto.IbattleMoveData|null} [moveData] frameData moveData
          */
 
         /**
-         * Constructs a new battleClientFrameData.
+         * Constructs a new frameData.
          * @memberof proto
-         * @classdesc Represents a battleClientFrameData.
-         * @implements IbattleClientFrameData
+         * @classdesc Represents a frameData.
+         * @implements IframeData
          * @constructor
-         * @param {proto.IbattleClientFrameData=} [properties] Properties to set
+         * @param {proto.IframeData=} [properties] Properties to set
          */
-        function battleClientFrameData(properties) {
+        function frameData(properties) {
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -2185,43 +2230,43 @@ $root.proto = (function() {
         }
 
         /**
-         * battleClientFrameData op.
+         * frameData op.
          * @member {number} op
-         * @memberof proto.battleClientFrameData
+         * @memberof proto.frameData
          * @instance
          */
-        battleClientFrameData.prototype.op = 0;
+        frameData.prototype.op = 0;
 
         /**
-         * battleClientFrameData moveData.
+         * frameData moveData.
          * @member {proto.IbattleMoveData|null|undefined} moveData
-         * @memberof proto.battleClientFrameData
+         * @memberof proto.frameData
          * @instance
          */
-        battleClientFrameData.prototype.moveData = null;
+        frameData.prototype.moveData = null;
 
         /**
-         * Creates a new battleClientFrameData instance using the specified properties.
+         * Creates a new frameData instance using the specified properties.
          * @function create
-         * @memberof proto.battleClientFrameData
+         * @memberof proto.frameData
          * @static
-         * @param {proto.IbattleClientFrameData=} [properties] Properties to set
-         * @returns {proto.battleClientFrameData} battleClientFrameData instance
+         * @param {proto.IframeData=} [properties] Properties to set
+         * @returns {proto.frameData} frameData instance
          */
-        battleClientFrameData.create = function create(properties) {
-            return new battleClientFrameData(properties);
+        frameData.create = function create(properties) {
+            return new frameData(properties);
         };
 
         /**
-         * Encodes the specified battleClientFrameData message. Does not implicitly {@link proto.battleClientFrameData.verify|verify} messages.
+         * Encodes the specified frameData message. Does not implicitly {@link proto.frameData.verify|verify} messages.
          * @function encode
-         * @memberof proto.battleClientFrameData
+         * @memberof proto.frameData
          * @static
-         * @param {proto.IbattleClientFrameData} message battleClientFrameData message or plain object to encode
+         * @param {proto.IframeData} message frameData message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        battleClientFrameData.encode = function encode(message, writer) {
+        frameData.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
             if (message.op != null && Object.hasOwnProperty.call(message, "op"))
@@ -2232,33 +2277,33 @@ $root.proto = (function() {
         };
 
         /**
-         * Encodes the specified battleClientFrameData message, length delimited. Does not implicitly {@link proto.battleClientFrameData.verify|verify} messages.
+         * Encodes the specified frameData message, length delimited. Does not implicitly {@link proto.frameData.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof proto.battleClientFrameData
+         * @memberof proto.frameData
          * @static
-         * @param {proto.IbattleClientFrameData} message battleClientFrameData message or plain object to encode
+         * @param {proto.IframeData} message frameData message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        battleClientFrameData.encodeDelimited = function encodeDelimited(message, writer) {
+        frameData.encodeDelimited = function encodeDelimited(message, writer) {
             return this.encode(message, writer).ldelim();
         };
 
         /**
-         * Decodes a battleClientFrameData message from the specified reader or buffer.
+         * Decodes a frameData message from the specified reader or buffer.
          * @function decode
-         * @memberof proto.battleClientFrameData
+         * @memberof proto.frameData
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {proto.battleClientFrameData} battleClientFrameData
+         * @returns {proto.frameData} frameData
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        battleClientFrameData.decode = function decode(reader, length, error) {
+        frameData.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.proto.battleClientFrameData();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.proto.frameData();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 if (tag === error)
@@ -2281,30 +2326,30 @@ $root.proto = (function() {
         };
 
         /**
-         * Decodes a battleClientFrameData message from the specified reader or buffer, length delimited.
+         * Decodes a frameData message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof proto.battleClientFrameData
+         * @memberof proto.frameData
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {proto.battleClientFrameData} battleClientFrameData
+         * @returns {proto.frameData} frameData
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        battleClientFrameData.decodeDelimited = function decodeDelimited(reader) {
+        frameData.decodeDelimited = function decodeDelimited(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
         };
 
         /**
-         * Verifies a battleClientFrameData message.
+         * Verifies a frameData message.
          * @function verify
-         * @memberof proto.battleClientFrameData
+         * @memberof proto.frameData
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        battleClientFrameData.verify = function verify(message) {
+        frameData.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             if (message.op != null && message.hasOwnProperty("op"))
@@ -2319,37 +2364,37 @@ $root.proto = (function() {
         };
 
         /**
-         * Creates a battleClientFrameData message from a plain object. Also converts values to their respective internal types.
+         * Creates a frameData message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof proto.battleClientFrameData
+         * @memberof proto.frameData
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {proto.battleClientFrameData} battleClientFrameData
+         * @returns {proto.frameData} frameData
          */
-        battleClientFrameData.fromObject = function fromObject(object) {
-            if (object instanceof $root.proto.battleClientFrameData)
+        frameData.fromObject = function fromObject(object) {
+            if (object instanceof $root.proto.frameData)
                 return object;
-            var message = new $root.proto.battleClientFrameData();
+            var message = new $root.proto.frameData();
             if (object.op != null)
                 message.op = object.op | 0;
             if (object.moveData != null) {
                 if (typeof object.moveData !== "object")
-                    throw TypeError(".proto.battleClientFrameData.moveData: object expected");
+                    throw TypeError(".proto.frameData.moveData: object expected");
                 message.moveData = $root.proto.battleMoveData.fromObject(object.moveData);
             }
             return message;
         };
 
         /**
-         * Creates a plain object from a battleClientFrameData message. Also converts values to other types if specified.
+         * Creates a plain object from a frameData message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof proto.battleClientFrameData
+         * @memberof proto.frameData
          * @static
-         * @param {proto.battleClientFrameData} message battleClientFrameData
+         * @param {proto.frameData} message frameData
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        battleClientFrameData.toObject = function toObject(message, options) {
+        frameData.toObject = function toObject(message, options) {
             if (!options)
                 options = {};
             var object = {};
@@ -2365,53 +2410,53 @@ $root.proto = (function() {
         };
 
         /**
-         * Converts this battleClientFrameData to JSON.
+         * Converts this frameData to JSON.
          * @function toJSON
-         * @memberof proto.battleClientFrameData
+         * @memberof proto.frameData
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        battleClientFrameData.prototype.toJSON = function toJSON() {
+        frameData.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
-         * Gets the default type url for battleClientFrameData
+         * Gets the default type url for frameData
          * @function getTypeUrl
-         * @memberof proto.battleClientFrameData
+         * @memberof proto.frameData
          * @static
          * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
          * @returns {string} The default type url
          */
-        battleClientFrameData.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        frameData.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
             if (typeUrlPrefix === undefined) {
                 typeUrlPrefix = "type.googleapis.com";
             }
-            return typeUrlPrefix + "/proto.battleClientFrameData";
+            return typeUrlPrefix + "/proto.frameData";
         };
 
-        return battleClientFrameData;
+        return frameData;
     })();
 
-    proto.battleFrameReq = (function() {
+    proto.userFrameData = (function() {
 
         /**
-         * Properties of a battleFrameReq.
+         * Properties of a userFrameData.
          * @memberof proto
-         * @interface IbattleFrameReq
-         * @property {number|null} [frameIndex] battleFrameReq frameIndex
-         * @property {proto.IbattleClientFrameData|null} [data] battleFrameReq data
+         * @interface IuserFrameData
+         * @property {number|null} [userId] userFrameData userId
+         * @property {proto.IframeData|null} [data] userFrameData data
          */
 
         /**
-         * Constructs a new battleFrameReq.
+         * Constructs a new userFrameData.
          * @memberof proto
-         * @classdesc Represents a battleFrameReq.
-         * @implements IbattleFrameReq
+         * @classdesc Represents a userFrameData.
+         * @implements IuserFrameData
          * @constructor
-         * @param {proto.IbattleFrameReq=} [properties] Properties to set
+         * @param {proto.IuserFrameData=} [properties] Properties to set
          */
-        function battleFrameReq(properties) {
+        function userFrameData(properties) {
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -2419,314 +2464,80 @@ $root.proto = (function() {
         }
 
         /**
-         * battleFrameReq frameIndex.
-         * @member {number} frameIndex
-         * @memberof proto.battleFrameReq
-         * @instance
-         */
-        battleFrameReq.prototype.frameIndex = 0;
-
-        /**
-         * battleFrameReq data.
-         * @member {proto.IbattleClientFrameData|null|undefined} data
-         * @memberof proto.battleFrameReq
-         * @instance
-         */
-        battleFrameReq.prototype.data = null;
-
-        /**
-         * Creates a new battleFrameReq instance using the specified properties.
-         * @function create
-         * @memberof proto.battleFrameReq
-         * @static
-         * @param {proto.IbattleFrameReq=} [properties] Properties to set
-         * @returns {proto.battleFrameReq} battleFrameReq instance
-         */
-        battleFrameReq.create = function create(properties) {
-            return new battleFrameReq(properties);
-        };
-
-        /**
-         * Encodes the specified battleFrameReq message. Does not implicitly {@link proto.battleFrameReq.verify|verify} messages.
-         * @function encode
-         * @memberof proto.battleFrameReq
-         * @static
-         * @param {proto.IbattleFrameReq} message battleFrameReq message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        battleFrameReq.encode = function encode(message, writer) {
-            if (!writer)
-                writer = $Writer.create();
-            if (message.frameIndex != null && Object.hasOwnProperty.call(message, "frameIndex"))
-                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.frameIndex);
-            if (message.data != null && Object.hasOwnProperty.call(message, "data"))
-                $root.proto.battleClientFrameData.encode(message.data, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-            return writer;
-        };
-
-        /**
-         * Encodes the specified battleFrameReq message, length delimited. Does not implicitly {@link proto.battleFrameReq.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof proto.battleFrameReq
-         * @static
-         * @param {proto.IbattleFrameReq} message battleFrameReq message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        battleFrameReq.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
-         * Decodes a battleFrameReq message from the specified reader or buffer.
-         * @function decode
-         * @memberof proto.battleFrameReq
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @param {number} [length] Message length if known beforehand
-         * @returns {proto.battleFrameReq} battleFrameReq
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        battleFrameReq.decode = function decode(reader, length, error) {
-            if (!(reader instanceof $Reader))
-                reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.proto.battleFrameReq();
-            while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 1: {
-                        message.frameIndex = reader.int32();
-                        break;
-                    }
-                case 2: {
-                        message.data = $root.proto.battleClientFrameData.decode(reader, reader.uint32());
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
-                    break;
-                }
-            }
-            return message;
-        };
-
-        /**
-         * Decodes a battleFrameReq message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof proto.battleFrameReq
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {proto.battleFrameReq} battleFrameReq
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        battleFrameReq.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a battleFrameReq message.
-         * @function verify
-         * @memberof proto.battleFrameReq
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        battleFrameReq.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.frameIndex != null && message.hasOwnProperty("frameIndex"))
-                if (!$util.isInteger(message.frameIndex))
-                    return "frameIndex: integer expected";
-            if (message.data != null && message.hasOwnProperty("data")) {
-                var error = $root.proto.battleClientFrameData.verify(message.data);
-                if (error)
-                    return "data." + error;
-            }
-            return null;
-        };
-
-        /**
-         * Creates a battleFrameReq message from a plain object. Also converts values to their respective internal types.
-         * @function fromObject
-         * @memberof proto.battleFrameReq
-         * @static
-         * @param {Object.<string,*>} object Plain object
-         * @returns {proto.battleFrameReq} battleFrameReq
-         */
-        battleFrameReq.fromObject = function fromObject(object) {
-            if (object instanceof $root.proto.battleFrameReq)
-                return object;
-            var message = new $root.proto.battleFrameReq();
-            if (object.frameIndex != null)
-                message.frameIndex = object.frameIndex | 0;
-            if (object.data != null) {
-                if (typeof object.data !== "object")
-                    throw TypeError(".proto.battleFrameReq.data: object expected");
-                message.data = $root.proto.battleClientFrameData.fromObject(object.data);
-            }
-            return message;
-        };
-
-        /**
-         * Creates a plain object from a battleFrameReq message. Also converts values to other types if specified.
-         * @function toObject
-         * @memberof proto.battleFrameReq
-         * @static
-         * @param {proto.battleFrameReq} message battleFrameReq
-         * @param {$protobuf.IConversionOptions} [options] Conversion options
-         * @returns {Object.<string,*>} Plain object
-         */
-        battleFrameReq.toObject = function toObject(message, options) {
-            if (!options)
-                options = {};
-            var object = {};
-            if (options.defaults) {
-                object.frameIndex = 0;
-                object.data = null;
-            }
-            if (message.frameIndex != null && message.hasOwnProperty("frameIndex"))
-                object.frameIndex = message.frameIndex;
-            if (message.data != null && message.hasOwnProperty("data"))
-                object.data = $root.proto.battleClientFrameData.toObject(message.data, options);
-            return object;
-        };
-
-        /**
-         * Converts this battleFrameReq to JSON.
-         * @function toJSON
-         * @memberof proto.battleFrameReq
-         * @instance
-         * @returns {Object.<string,*>} JSON object
-         */
-        battleFrameReq.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for battleFrameReq
-         * @function getTypeUrl
-         * @memberof proto.battleFrameReq
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        battleFrameReq.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/proto.battleFrameReq";
-        };
-
-        return battleFrameReq;
-    })();
-
-    proto.battleServerFrameData = (function() {
-
-        /**
-         * Properties of a battleServerFrameData.
-         * @memberof proto
-         * @interface IbattleServerFrameData
-         * @property {number|null} [userId] battleServerFrameData userId
-         * @property {proto.IbattleClientFrameData|null} [data] battleServerFrameData data
-         */
-
-        /**
-         * Constructs a new battleServerFrameData.
-         * @memberof proto
-         * @classdesc Represents a battleServerFrameData.
-         * @implements IbattleServerFrameData
-         * @constructor
-         * @param {proto.IbattleServerFrameData=} [properties] Properties to set
-         */
-        function battleServerFrameData(properties) {
-            if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
-                        this[keys[i]] = properties[keys[i]];
-        }
-
-        /**
-         * battleServerFrameData userId.
+         * userFrameData userId.
          * @member {number} userId
-         * @memberof proto.battleServerFrameData
+         * @memberof proto.userFrameData
          * @instance
          */
-        battleServerFrameData.prototype.userId = 0;
+        userFrameData.prototype.userId = 0;
 
         /**
-         * battleServerFrameData data.
-         * @member {proto.IbattleClientFrameData|null|undefined} data
-         * @memberof proto.battleServerFrameData
+         * userFrameData data.
+         * @member {proto.IframeData|null|undefined} data
+         * @memberof proto.userFrameData
          * @instance
          */
-        battleServerFrameData.prototype.data = null;
+        userFrameData.prototype.data = null;
 
         /**
-         * Creates a new battleServerFrameData instance using the specified properties.
+         * Creates a new userFrameData instance using the specified properties.
          * @function create
-         * @memberof proto.battleServerFrameData
+         * @memberof proto.userFrameData
          * @static
-         * @param {proto.IbattleServerFrameData=} [properties] Properties to set
-         * @returns {proto.battleServerFrameData} battleServerFrameData instance
+         * @param {proto.IuserFrameData=} [properties] Properties to set
+         * @returns {proto.userFrameData} userFrameData instance
          */
-        battleServerFrameData.create = function create(properties) {
-            return new battleServerFrameData(properties);
+        userFrameData.create = function create(properties) {
+            return new userFrameData(properties);
         };
 
         /**
-         * Encodes the specified battleServerFrameData message. Does not implicitly {@link proto.battleServerFrameData.verify|verify} messages.
+         * Encodes the specified userFrameData message. Does not implicitly {@link proto.userFrameData.verify|verify} messages.
          * @function encode
-         * @memberof proto.battleServerFrameData
+         * @memberof proto.userFrameData
          * @static
-         * @param {proto.IbattleServerFrameData} message battleServerFrameData message or plain object to encode
+         * @param {proto.IuserFrameData} message userFrameData message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        battleServerFrameData.encode = function encode(message, writer) {
+        userFrameData.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
             if (message.userId != null && Object.hasOwnProperty.call(message, "userId"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.userId);
             if (message.data != null && Object.hasOwnProperty.call(message, "data"))
-                $root.proto.battleClientFrameData.encode(message.data, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                $root.proto.frameData.encode(message.data, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
             return writer;
         };
 
         /**
-         * Encodes the specified battleServerFrameData message, length delimited. Does not implicitly {@link proto.battleServerFrameData.verify|verify} messages.
+         * Encodes the specified userFrameData message, length delimited. Does not implicitly {@link proto.userFrameData.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof proto.battleServerFrameData
+         * @memberof proto.userFrameData
          * @static
-         * @param {proto.IbattleServerFrameData} message battleServerFrameData message or plain object to encode
+         * @param {proto.IuserFrameData} message userFrameData message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        battleServerFrameData.encodeDelimited = function encodeDelimited(message, writer) {
+        userFrameData.encodeDelimited = function encodeDelimited(message, writer) {
             return this.encode(message, writer).ldelim();
         };
 
         /**
-         * Decodes a battleServerFrameData message from the specified reader or buffer.
+         * Decodes a userFrameData message from the specified reader or buffer.
          * @function decode
-         * @memberof proto.battleServerFrameData
+         * @memberof proto.userFrameData
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {proto.battleServerFrameData} battleServerFrameData
+         * @returns {proto.userFrameData} userFrameData
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        battleServerFrameData.decode = function decode(reader, length, error) {
+        userFrameData.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.proto.battleServerFrameData();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.proto.userFrameData();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 if (tag === error)
@@ -2737,7 +2548,7 @@ $root.proto = (function() {
                         break;
                     }
                 case 2: {
-                        message.data = $root.proto.battleClientFrameData.decode(reader, reader.uint32());
+                        message.data = $root.proto.frameData.decode(reader, reader.uint32());
                         break;
                     }
                 default:
@@ -2749,37 +2560,37 @@ $root.proto = (function() {
         };
 
         /**
-         * Decodes a battleServerFrameData message from the specified reader or buffer, length delimited.
+         * Decodes a userFrameData message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof proto.battleServerFrameData
+         * @memberof proto.userFrameData
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {proto.battleServerFrameData} battleServerFrameData
+         * @returns {proto.userFrameData} userFrameData
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        battleServerFrameData.decodeDelimited = function decodeDelimited(reader) {
+        userFrameData.decodeDelimited = function decodeDelimited(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
         };
 
         /**
-         * Verifies a battleServerFrameData message.
+         * Verifies a userFrameData message.
          * @function verify
-         * @memberof proto.battleServerFrameData
+         * @memberof proto.userFrameData
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        battleServerFrameData.verify = function verify(message) {
+        userFrameData.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             if (message.userId != null && message.hasOwnProperty("userId"))
                 if (!$util.isInteger(message.userId))
                     return "userId: integer expected";
             if (message.data != null && message.hasOwnProperty("data")) {
-                var error = $root.proto.battleClientFrameData.verify(message.data);
+                var error = $root.proto.frameData.verify(message.data);
                 if (error)
                     return "data." + error;
             }
@@ -2787,37 +2598,37 @@ $root.proto = (function() {
         };
 
         /**
-         * Creates a battleServerFrameData message from a plain object. Also converts values to their respective internal types.
+         * Creates a userFrameData message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof proto.battleServerFrameData
+         * @memberof proto.userFrameData
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {proto.battleServerFrameData} battleServerFrameData
+         * @returns {proto.userFrameData} userFrameData
          */
-        battleServerFrameData.fromObject = function fromObject(object) {
-            if (object instanceof $root.proto.battleServerFrameData)
+        userFrameData.fromObject = function fromObject(object) {
+            if (object instanceof $root.proto.userFrameData)
                 return object;
-            var message = new $root.proto.battleServerFrameData();
+            var message = new $root.proto.userFrameData();
             if (object.userId != null)
                 message.userId = object.userId | 0;
             if (object.data != null) {
                 if (typeof object.data !== "object")
-                    throw TypeError(".proto.battleServerFrameData.data: object expected");
-                message.data = $root.proto.battleClientFrameData.fromObject(object.data);
+                    throw TypeError(".proto.userFrameData.data: object expected");
+                message.data = $root.proto.frameData.fromObject(object.data);
             }
             return message;
         };
 
         /**
-         * Creates a plain object from a battleServerFrameData message. Also converts values to other types if specified.
+         * Creates a plain object from a userFrameData message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof proto.battleServerFrameData
+         * @memberof proto.userFrameData
          * @static
-         * @param {proto.battleServerFrameData} message battleServerFrameData
+         * @param {proto.userFrameData} message userFrameData
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        battleServerFrameData.toObject = function toObject(message, options) {
+        userFrameData.toObject = function toObject(message, options) {
             if (!options)
                 options = {};
             var object = {};
@@ -2828,37 +2639,559 @@ $root.proto = (function() {
             if (message.userId != null && message.hasOwnProperty("userId"))
                 object.userId = message.userId;
             if (message.data != null && message.hasOwnProperty("data"))
-                object.data = $root.proto.battleClientFrameData.toObject(message.data, options);
+                object.data = $root.proto.frameData.toObject(message.data, options);
             return object;
         };
 
         /**
-         * Converts this battleServerFrameData to JSON.
+         * Converts this userFrameData to JSON.
          * @function toJSON
-         * @memberof proto.battleServerFrameData
+         * @memberof proto.userFrameData
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        battleServerFrameData.prototype.toJSON = function toJSON() {
+        userFrameData.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
-         * Gets the default type url for battleServerFrameData
+         * Gets the default type url for userFrameData
          * @function getTypeUrl
-         * @memberof proto.battleServerFrameData
+         * @memberof proto.userFrameData
          * @static
          * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
          * @returns {string} The default type url
          */
-        battleServerFrameData.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        userFrameData.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
             if (typeUrlPrefix === undefined) {
                 typeUrlPrefix = "type.googleapis.com";
             }
-            return typeUrlPrefix + "/proto.battleServerFrameData";
+            return typeUrlPrefix + "/proto.userFrameData";
         };
 
-        return battleServerFrameData;
+        return userFrameData;
+    })();
+
+    proto.frameDataGather = (function() {
+
+        /**
+         * Properties of a frameDataGather.
+         * @memberof proto
+         * @interface IframeDataGather
+         * @property {number|null} [frameIndex] frameDataGather frameIndex
+         * @property {number|Long|null} [frameAt] frameDataGather frameAt
+         * @property {Array.<proto.IuserFrameData>|null} [frameData] frameDataGather frameData
+         */
+
+        /**
+         * Constructs a new frameDataGather.
+         * @memberof proto
+         * @classdesc Represents a frameDataGather.
+         * @implements IframeDataGather
+         * @constructor
+         * @param {proto.IframeDataGather=} [properties] Properties to set
+         */
+        function frameDataGather(properties) {
+            this.frameData = [];
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * frameDataGather frameIndex.
+         * @member {number} frameIndex
+         * @memberof proto.frameDataGather
+         * @instance
+         */
+        frameDataGather.prototype.frameIndex = 0;
+
+        /**
+         * frameDataGather frameAt.
+         * @member {number|Long} frameAt
+         * @memberof proto.frameDataGather
+         * @instance
+         */
+        frameDataGather.prototype.frameAt = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+        /**
+         * frameDataGather frameData.
+         * @member {Array.<proto.IuserFrameData>} frameData
+         * @memberof proto.frameDataGather
+         * @instance
+         */
+        frameDataGather.prototype.frameData = $util.emptyArray;
+
+        /**
+         * Creates a new frameDataGather instance using the specified properties.
+         * @function create
+         * @memberof proto.frameDataGather
+         * @static
+         * @param {proto.IframeDataGather=} [properties] Properties to set
+         * @returns {proto.frameDataGather} frameDataGather instance
+         */
+        frameDataGather.create = function create(properties) {
+            return new frameDataGather(properties);
+        };
+
+        /**
+         * Encodes the specified frameDataGather message. Does not implicitly {@link proto.frameDataGather.verify|verify} messages.
+         * @function encode
+         * @memberof proto.frameDataGather
+         * @static
+         * @param {proto.IframeDataGather} message frameDataGather message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        frameDataGather.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.frameIndex != null && Object.hasOwnProperty.call(message, "frameIndex"))
+                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.frameIndex);
+            if (message.frameAt != null && Object.hasOwnProperty.call(message, "frameAt"))
+                writer.uint32(/* id 2, wireType 0 =*/16).int64(message.frameAt);
+            if (message.frameData != null && message.frameData.length)
+                for (var i = 0; i < message.frameData.length; ++i)
+                    $root.proto.userFrameData.encode(message.frameData[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+            return writer;
+        };
+
+        /**
+         * Encodes the specified frameDataGather message, length delimited. Does not implicitly {@link proto.frameDataGather.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof proto.frameDataGather
+         * @static
+         * @param {proto.IframeDataGather} message frameDataGather message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        frameDataGather.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a frameDataGather message from the specified reader or buffer.
+         * @function decode
+         * @memberof proto.frameDataGather
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {proto.frameDataGather} frameDataGather
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        frameDataGather.decode = function decode(reader, length, error) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.proto.frameDataGather();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                if (tag === error)
+                    break;
+                switch (tag >>> 3) {
+                case 1: {
+                        message.frameIndex = reader.int32();
+                        break;
+                    }
+                case 2: {
+                        message.frameAt = reader.int64();
+                        break;
+                    }
+                case 3: {
+                        if (!(message.frameData && message.frameData.length))
+                            message.frameData = [];
+                        message.frameData.push($root.proto.userFrameData.decode(reader, reader.uint32()));
+                        break;
+                    }
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a frameDataGather message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof proto.frameDataGather
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {proto.frameDataGather} frameDataGather
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        frameDataGather.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a frameDataGather message.
+         * @function verify
+         * @memberof proto.frameDataGather
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        frameDataGather.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.frameIndex != null && message.hasOwnProperty("frameIndex"))
+                if (!$util.isInteger(message.frameIndex))
+                    return "frameIndex: integer expected";
+            if (message.frameAt != null && message.hasOwnProperty("frameAt"))
+                if (!$util.isInteger(message.frameAt) && !(message.frameAt && $util.isInteger(message.frameAt.low) && $util.isInteger(message.frameAt.high)))
+                    return "frameAt: integer|Long expected";
+            if (message.frameData != null && message.hasOwnProperty("frameData")) {
+                if (!Array.isArray(message.frameData))
+                    return "frameData: array expected";
+                for (var i = 0; i < message.frameData.length; ++i) {
+                    var error = $root.proto.userFrameData.verify(message.frameData[i]);
+                    if (error)
+                        return "frameData." + error;
+                }
+            }
+            return null;
+        };
+
+        /**
+         * Creates a frameDataGather message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof proto.frameDataGather
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {proto.frameDataGather} frameDataGather
+         */
+        frameDataGather.fromObject = function fromObject(object) {
+            if (object instanceof $root.proto.frameDataGather)
+                return object;
+            var message = new $root.proto.frameDataGather();
+            if (object.frameIndex != null)
+                message.frameIndex = object.frameIndex | 0;
+            if (object.frameAt != null)
+                if ($util.Long)
+                    (message.frameAt = $util.Long.fromValue(object.frameAt)).unsigned = false;
+                else if (typeof object.frameAt === "string")
+                    message.frameAt = parseInt(object.frameAt, 10);
+                else if (typeof object.frameAt === "number")
+                    message.frameAt = object.frameAt;
+                else if (typeof object.frameAt === "object")
+                    message.frameAt = new $util.LongBits(object.frameAt.low >>> 0, object.frameAt.high >>> 0).toNumber();
+            if (object.frameData) {
+                if (!Array.isArray(object.frameData))
+                    throw TypeError(".proto.frameDataGather.frameData: array expected");
+                message.frameData = [];
+                for (var i = 0; i < object.frameData.length; ++i) {
+                    if (typeof object.frameData[i] !== "object")
+                        throw TypeError(".proto.frameDataGather.frameData: object expected");
+                    message.frameData[i] = $root.proto.userFrameData.fromObject(object.frameData[i]);
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a frameDataGather message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof proto.frameDataGather
+         * @static
+         * @param {proto.frameDataGather} message frameDataGather
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        frameDataGather.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.arrays || options.defaults)
+                object.frameData = [];
+            if (options.defaults) {
+                object.frameIndex = 0;
+                if ($util.Long) {
+                    var long = new $util.Long(0, 0, false);
+                    object.frameAt = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                } else
+                    object.frameAt = options.longs === String ? "0" : 0;
+            }
+            if (message.frameIndex != null && message.hasOwnProperty("frameIndex"))
+                object.frameIndex = message.frameIndex;
+            if (message.frameAt != null && message.hasOwnProperty("frameAt"))
+                if (typeof message.frameAt === "number")
+                    object.frameAt = options.longs === String ? String(message.frameAt) : message.frameAt;
+                else
+                    object.frameAt = options.longs === String ? $util.Long.prototype.toString.call(message.frameAt) : options.longs === Number ? new $util.LongBits(message.frameAt.low >>> 0, message.frameAt.high >>> 0).toNumber() : message.frameAt;
+            if (message.frameData && message.frameData.length) {
+                object.frameData = [];
+                for (var j = 0; j < message.frameData.length; ++j)
+                    object.frameData[j] = $root.proto.userFrameData.toObject(message.frameData[j], options);
+            }
+            return object;
+        };
+
+        /**
+         * Converts this frameDataGather to JSON.
+         * @function toJSON
+         * @memberof proto.frameDataGather
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        frameDataGather.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for frameDataGather
+         * @function getTypeUrl
+         * @memberof proto.frameDataGather
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        frameDataGather.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/proto.frameDataGather";
+        };
+
+        return frameDataGather;
+    })();
+
+    proto.battleFrameDataInputReq = (function() {
+
+        /**
+         * Properties of a battleFrameDataInputReq.
+         * @memberof proto
+         * @interface IbattleFrameDataInputReq
+         * @property {number|null} [frameIndex] battleFrameDataInputReq frameIndex
+         * @property {proto.IframeData|null} [data] battleFrameDataInputReq data
+         */
+
+        /**
+         * Constructs a new battleFrameDataInputReq.
+         * @memberof proto
+         * @classdesc Represents a battleFrameDataInputReq.
+         * @implements IbattleFrameDataInputReq
+         * @constructor
+         * @param {proto.IbattleFrameDataInputReq=} [properties] Properties to set
+         */
+        function battleFrameDataInputReq(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * battleFrameDataInputReq frameIndex.
+         * @member {number} frameIndex
+         * @memberof proto.battleFrameDataInputReq
+         * @instance
+         */
+        battleFrameDataInputReq.prototype.frameIndex = 0;
+
+        /**
+         * battleFrameDataInputReq data.
+         * @member {proto.IframeData|null|undefined} data
+         * @memberof proto.battleFrameDataInputReq
+         * @instance
+         */
+        battleFrameDataInputReq.prototype.data = null;
+
+        /**
+         * Creates a new battleFrameDataInputReq instance using the specified properties.
+         * @function create
+         * @memberof proto.battleFrameDataInputReq
+         * @static
+         * @param {proto.IbattleFrameDataInputReq=} [properties] Properties to set
+         * @returns {proto.battleFrameDataInputReq} battleFrameDataInputReq instance
+         */
+        battleFrameDataInputReq.create = function create(properties) {
+            return new battleFrameDataInputReq(properties);
+        };
+
+        /**
+         * Encodes the specified battleFrameDataInputReq message. Does not implicitly {@link proto.battleFrameDataInputReq.verify|verify} messages.
+         * @function encode
+         * @memberof proto.battleFrameDataInputReq
+         * @static
+         * @param {proto.IbattleFrameDataInputReq} message battleFrameDataInputReq message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        battleFrameDataInputReq.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.frameIndex != null && Object.hasOwnProperty.call(message, "frameIndex"))
+                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.frameIndex);
+            if (message.data != null && Object.hasOwnProperty.call(message, "data"))
+                $root.proto.frameData.encode(message.data, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+            return writer;
+        };
+
+        /**
+         * Encodes the specified battleFrameDataInputReq message, length delimited. Does not implicitly {@link proto.battleFrameDataInputReq.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof proto.battleFrameDataInputReq
+         * @static
+         * @param {proto.IbattleFrameDataInputReq} message battleFrameDataInputReq message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        battleFrameDataInputReq.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a battleFrameDataInputReq message from the specified reader or buffer.
+         * @function decode
+         * @memberof proto.battleFrameDataInputReq
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {proto.battleFrameDataInputReq} battleFrameDataInputReq
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        battleFrameDataInputReq.decode = function decode(reader, length, error) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.proto.battleFrameDataInputReq();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                if (tag === error)
+                    break;
+                switch (tag >>> 3) {
+                case 1: {
+                        message.frameIndex = reader.int32();
+                        break;
+                    }
+                case 2: {
+                        message.data = $root.proto.frameData.decode(reader, reader.uint32());
+                        break;
+                    }
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a battleFrameDataInputReq message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof proto.battleFrameDataInputReq
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {proto.battleFrameDataInputReq} battleFrameDataInputReq
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        battleFrameDataInputReq.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a battleFrameDataInputReq message.
+         * @function verify
+         * @memberof proto.battleFrameDataInputReq
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        battleFrameDataInputReq.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.frameIndex != null && message.hasOwnProperty("frameIndex"))
+                if (!$util.isInteger(message.frameIndex))
+                    return "frameIndex: integer expected";
+            if (message.data != null && message.hasOwnProperty("data")) {
+                var error = $root.proto.frameData.verify(message.data);
+                if (error)
+                    return "data." + error;
+            }
+            return null;
+        };
+
+        /**
+         * Creates a battleFrameDataInputReq message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof proto.battleFrameDataInputReq
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {proto.battleFrameDataInputReq} battleFrameDataInputReq
+         */
+        battleFrameDataInputReq.fromObject = function fromObject(object) {
+            if (object instanceof $root.proto.battleFrameDataInputReq)
+                return object;
+            var message = new $root.proto.battleFrameDataInputReq();
+            if (object.frameIndex != null)
+                message.frameIndex = object.frameIndex | 0;
+            if (object.data != null) {
+                if (typeof object.data !== "object")
+                    throw TypeError(".proto.battleFrameDataInputReq.data: object expected");
+                message.data = $root.proto.frameData.fromObject(object.data);
+            }
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a battleFrameDataInputReq message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof proto.battleFrameDataInputReq
+         * @static
+         * @param {proto.battleFrameDataInputReq} message battleFrameDataInputReq
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        battleFrameDataInputReq.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.frameIndex = 0;
+                object.data = null;
+            }
+            if (message.frameIndex != null && message.hasOwnProperty("frameIndex"))
+                object.frameIndex = message.frameIndex;
+            if (message.data != null && message.hasOwnProperty("data"))
+                object.data = $root.proto.frameData.toObject(message.data, options);
+            return object;
+        };
+
+        /**
+         * Converts this battleFrameDataInputReq to JSON.
+         * @function toJSON
+         * @memberof proto.battleFrameDataInputReq
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        battleFrameDataInputReq.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for battleFrameDataInputReq
+         * @function getTypeUrl
+         * @memberof proto.battleFrameDataInputReq
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        battleFrameDataInputReq.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/proto.battleFrameDataInputReq";
+        };
+
+        return battleFrameDataInputReq;
     })();
 
     proto.battleFrameResp = (function() {
@@ -2869,8 +3202,7 @@ $root.proto = (function() {
          * @interface IbattleFrameResp
          * @property {proto.RetCode|null} [code] battleFrameResp code
          * @property {proto.MsgId|null} [id] battleFrameResp id
-         * @property {number|null} [frameIndex] battleFrameResp frameIndex
-         * @property {Array.<proto.IbattleServerFrameData>|null} [data] battleFrameResp data
+         * @property {proto.IframeDataGather|null} [data] battleFrameResp data
          */
 
         /**
@@ -2882,7 +3214,6 @@ $root.proto = (function() {
          * @param {proto.IbattleFrameResp=} [properties] Properties to set
          */
         function battleFrameResp(properties) {
-            this.data = [];
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -2906,20 +3237,12 @@ $root.proto = (function() {
         battleFrameResp.prototype.id = 0;
 
         /**
-         * battleFrameResp frameIndex.
-         * @member {number} frameIndex
-         * @memberof proto.battleFrameResp
-         * @instance
-         */
-        battleFrameResp.prototype.frameIndex = 0;
-
-        /**
          * battleFrameResp data.
-         * @member {Array.<proto.IbattleServerFrameData>} data
+         * @member {proto.IframeDataGather|null|undefined} data
          * @memberof proto.battleFrameResp
          * @instance
          */
-        battleFrameResp.prototype.data = $util.emptyArray;
+        battleFrameResp.prototype.data = null;
 
         /**
          * Creates a new battleFrameResp instance using the specified properties.
@@ -2949,11 +3272,8 @@ $root.proto = (function() {
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.code);
             if (message.id != null && Object.hasOwnProperty.call(message, "id"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.id);
-            if (message.frameIndex != null && Object.hasOwnProperty.call(message, "frameIndex"))
-                writer.uint32(/* id 3, wireType 0 =*/24).int32(message.frameIndex);
-            if (message.data != null && message.data.length)
-                for (var i = 0; i < message.data.length; ++i)
-                    $root.proto.battleServerFrameData.encode(message.data[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+            if (message.data != null && Object.hasOwnProperty.call(message, "data"))
+                $root.proto.frameDataGather.encode(message.data, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
             return writer;
         };
 
@@ -2999,13 +3319,7 @@ $root.proto = (function() {
                         break;
                     }
                 case 3: {
-                        message.frameIndex = reader.int32();
-                        break;
-                    }
-                case 4: {
-                        if (!(message.data && message.data.length))
-                            message.data = [];
-                        message.data.push($root.proto.battleServerFrameData.decode(reader, reader.uint32()));
+                        message.data = $root.proto.frameDataGather.decode(reader, reader.uint32());
                         break;
                     }
                 default:
@@ -3069,19 +3383,15 @@ $root.proto = (function() {
                 case 8:
                 case 9:
                 case 10:
+                case 11:
+                case 12:
+                case 13:
                     break;
                 }
-            if (message.frameIndex != null && message.hasOwnProperty("frameIndex"))
-                if (!$util.isInteger(message.frameIndex))
-                    return "frameIndex: integer expected";
             if (message.data != null && message.hasOwnProperty("data")) {
-                if (!Array.isArray(message.data))
-                    return "data: array expected";
-                for (var i = 0; i < message.data.length; ++i) {
-                    var error = $root.proto.battleServerFrameData.verify(message.data[i]);
-                    if (error)
-                        return "data." + error;
-                }
+                var error = $root.proto.frameDataGather.verify(message.data);
+                if (error)
+                    return "data." + error;
             }
             return null;
         };
@@ -3173,22 +3483,27 @@ $root.proto = (function() {
             case 9:
                 message.id = 9;
                 break;
-            case "ID_BattleFrame":
+            case "ID_BattleFrameDataInput":
             case 10:
                 message.id = 10;
                 break;
+            case "ID_BattleFrameDataUpdate":
+            case 11:
+                message.id = 11;
+                break;
+            case "ID_GET_BattleFrameData":
+            case 12:
+                message.id = 12;
+                break;
+            case "ID_Heartbeat":
+            case 13:
+                message.id = 13;
+                break;
             }
-            if (object.frameIndex != null)
-                message.frameIndex = object.frameIndex | 0;
-            if (object.data) {
-                if (!Array.isArray(object.data))
-                    throw TypeError(".proto.battleFrameResp.data: array expected");
-                message.data = [];
-                for (var i = 0; i < object.data.length; ++i) {
-                    if (typeof object.data[i] !== "object")
-                        throw TypeError(".proto.battleFrameResp.data: object expected");
-                    message.data[i] = $root.proto.battleServerFrameData.fromObject(object.data[i]);
-                }
+            if (object.data != null) {
+                if (typeof object.data !== "object")
+                    throw TypeError(".proto.battleFrameResp.data: object expected");
+                message.data = $root.proto.frameDataGather.fromObject(object.data);
             }
             return message;
         };
@@ -3206,24 +3521,17 @@ $root.proto = (function() {
             if (!options)
                 options = {};
             var object = {};
-            if (options.arrays || options.defaults)
-                object.data = [];
             if (options.defaults) {
                 object.code = options.enums === String ? "SUCCESS" : 0;
                 object.id = options.enums === String ? "ID_FAIL" : 0;
-                object.frameIndex = 0;
+                object.data = null;
             }
             if (message.code != null && message.hasOwnProperty("code"))
                 object.code = options.enums === String ? $root.proto.RetCode[message.code] === undefined ? message.code : $root.proto.RetCode[message.code] : message.code;
             if (message.id != null && message.hasOwnProperty("id"))
                 object.id = options.enums === String ? $root.proto.MsgId[message.id] === undefined ? message.id : $root.proto.MsgId[message.id] : message.id;
-            if (message.frameIndex != null && message.hasOwnProperty("frameIndex"))
-                object.frameIndex = message.frameIndex;
-            if (message.data && message.data.length) {
-                object.data = [];
-                for (var j = 0; j < message.data.length; ++j)
-                    object.data[j] = $root.proto.battleServerFrameData.toObject(message.data[j], options);
-            }
+            if (message.data != null && message.hasOwnProperty("data"))
+                object.data = $root.proto.frameDataGather.toObject(message.data, options);
             return object;
         };
 
@@ -3256,24 +3564,24 @@ $root.proto = (function() {
         return battleFrameResp;
     })();
 
-    proto.battleFrameAllReq = (function() {
+    proto.getBattleFrameDataReq = (function() {
 
         /**
-         * Properties of a battleFrameAllReq.
+         * Properties of a getBattleFrameDataReq.
          * @memberof proto
-         * @interface IbattleFrameAllReq
-         * @property {number|null} [clientFrame] battleFrameAllReq clientFrame
+         * @interface IgetBattleFrameDataReq
+         * @property {number|null} [frameIndex] getBattleFrameDataReq frameIndex
          */
 
         /**
-         * Constructs a new battleFrameAllReq.
+         * Constructs a new getBattleFrameDataReq.
          * @memberof proto
-         * @classdesc Represents a battleFrameAllReq.
-         * @implements IbattleFrameAllReq
+         * @classdesc Represents a getBattleFrameDataReq.
+         * @implements IgetBattleFrameDataReq
          * @constructor
-         * @param {proto.IbattleFrameAllReq=} [properties] Properties to set
+         * @param {proto.IgetBattleFrameDataReq=} [properties] Properties to set
          */
-        function battleFrameAllReq(properties) {
+        function getBattleFrameDataReq(properties) {
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -3281,77 +3589,77 @@ $root.proto = (function() {
         }
 
         /**
-         * battleFrameAllReq clientFrame.
-         * @member {number} clientFrame
-         * @memberof proto.battleFrameAllReq
+         * getBattleFrameDataReq frameIndex.
+         * @member {number} frameIndex
+         * @memberof proto.getBattleFrameDataReq
          * @instance
          */
-        battleFrameAllReq.prototype.clientFrame = 0;
+        getBattleFrameDataReq.prototype.frameIndex = 0;
 
         /**
-         * Creates a new battleFrameAllReq instance using the specified properties.
+         * Creates a new getBattleFrameDataReq instance using the specified properties.
          * @function create
-         * @memberof proto.battleFrameAllReq
+         * @memberof proto.getBattleFrameDataReq
          * @static
-         * @param {proto.IbattleFrameAllReq=} [properties] Properties to set
-         * @returns {proto.battleFrameAllReq} battleFrameAllReq instance
+         * @param {proto.IgetBattleFrameDataReq=} [properties] Properties to set
+         * @returns {proto.getBattleFrameDataReq} getBattleFrameDataReq instance
          */
-        battleFrameAllReq.create = function create(properties) {
-            return new battleFrameAllReq(properties);
+        getBattleFrameDataReq.create = function create(properties) {
+            return new getBattleFrameDataReq(properties);
         };
 
         /**
-         * Encodes the specified battleFrameAllReq message. Does not implicitly {@link proto.battleFrameAllReq.verify|verify} messages.
+         * Encodes the specified getBattleFrameDataReq message. Does not implicitly {@link proto.getBattleFrameDataReq.verify|verify} messages.
          * @function encode
-         * @memberof proto.battleFrameAllReq
+         * @memberof proto.getBattleFrameDataReq
          * @static
-         * @param {proto.IbattleFrameAllReq} message battleFrameAllReq message or plain object to encode
+         * @param {proto.IgetBattleFrameDataReq} message getBattleFrameDataReq message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        battleFrameAllReq.encode = function encode(message, writer) {
+        getBattleFrameDataReq.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.clientFrame != null && Object.hasOwnProperty.call(message, "clientFrame"))
-                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.clientFrame);
+            if (message.frameIndex != null && Object.hasOwnProperty.call(message, "frameIndex"))
+                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.frameIndex);
             return writer;
         };
 
         /**
-         * Encodes the specified battleFrameAllReq message, length delimited. Does not implicitly {@link proto.battleFrameAllReq.verify|verify} messages.
+         * Encodes the specified getBattleFrameDataReq message, length delimited. Does not implicitly {@link proto.getBattleFrameDataReq.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof proto.battleFrameAllReq
+         * @memberof proto.getBattleFrameDataReq
          * @static
-         * @param {proto.IbattleFrameAllReq} message battleFrameAllReq message or plain object to encode
+         * @param {proto.IgetBattleFrameDataReq} message getBattleFrameDataReq message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        battleFrameAllReq.encodeDelimited = function encodeDelimited(message, writer) {
+        getBattleFrameDataReq.encodeDelimited = function encodeDelimited(message, writer) {
             return this.encode(message, writer).ldelim();
         };
 
         /**
-         * Decodes a battleFrameAllReq message from the specified reader or buffer.
+         * Decodes a getBattleFrameDataReq message from the specified reader or buffer.
          * @function decode
-         * @memberof proto.battleFrameAllReq
+         * @memberof proto.getBattleFrameDataReq
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {proto.battleFrameAllReq} battleFrameAllReq
+         * @returns {proto.getBattleFrameDataReq} getBattleFrameDataReq
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        battleFrameAllReq.decode = function decode(reader, length, error) {
+        getBattleFrameDataReq.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.proto.battleFrameAllReq();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.proto.getBattleFrameDataReq();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
                 case 1: {
-                        message.clientFrame = reader.int32();
+                        message.frameIndex = reader.int32();
                         break;
                     }
                 default:
@@ -3363,123 +3671,125 @@ $root.proto = (function() {
         };
 
         /**
-         * Decodes a battleFrameAllReq message from the specified reader or buffer, length delimited.
+         * Decodes a getBattleFrameDataReq message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof proto.battleFrameAllReq
+         * @memberof proto.getBattleFrameDataReq
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {proto.battleFrameAllReq} battleFrameAllReq
+         * @returns {proto.getBattleFrameDataReq} getBattleFrameDataReq
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        battleFrameAllReq.decodeDelimited = function decodeDelimited(reader) {
+        getBattleFrameDataReq.decodeDelimited = function decodeDelimited(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
         };
 
         /**
-         * Verifies a battleFrameAllReq message.
+         * Verifies a getBattleFrameDataReq message.
          * @function verify
-         * @memberof proto.battleFrameAllReq
+         * @memberof proto.getBattleFrameDataReq
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        battleFrameAllReq.verify = function verify(message) {
+        getBattleFrameDataReq.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            if (message.clientFrame != null && message.hasOwnProperty("clientFrame"))
-                if (!$util.isInteger(message.clientFrame))
-                    return "clientFrame: integer expected";
+            if (message.frameIndex != null && message.hasOwnProperty("frameIndex"))
+                if (!$util.isInteger(message.frameIndex))
+                    return "frameIndex: integer expected";
             return null;
         };
 
         /**
-         * Creates a battleFrameAllReq message from a plain object. Also converts values to their respective internal types.
+         * Creates a getBattleFrameDataReq message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof proto.battleFrameAllReq
+         * @memberof proto.getBattleFrameDataReq
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {proto.battleFrameAllReq} battleFrameAllReq
+         * @returns {proto.getBattleFrameDataReq} getBattleFrameDataReq
          */
-        battleFrameAllReq.fromObject = function fromObject(object) {
-            if (object instanceof $root.proto.battleFrameAllReq)
+        getBattleFrameDataReq.fromObject = function fromObject(object) {
+            if (object instanceof $root.proto.getBattleFrameDataReq)
                 return object;
-            var message = new $root.proto.battleFrameAllReq();
-            if (object.clientFrame != null)
-                message.clientFrame = object.clientFrame | 0;
+            var message = new $root.proto.getBattleFrameDataReq();
+            if (object.frameIndex != null)
+                message.frameIndex = object.frameIndex | 0;
             return message;
         };
 
         /**
-         * Creates a plain object from a battleFrameAllReq message. Also converts values to other types if specified.
+         * Creates a plain object from a getBattleFrameDataReq message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof proto.battleFrameAllReq
+         * @memberof proto.getBattleFrameDataReq
          * @static
-         * @param {proto.battleFrameAllReq} message battleFrameAllReq
+         * @param {proto.getBattleFrameDataReq} message getBattleFrameDataReq
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        battleFrameAllReq.toObject = function toObject(message, options) {
+        getBattleFrameDataReq.toObject = function toObject(message, options) {
             if (!options)
                 options = {};
             var object = {};
             if (options.defaults)
-                object.clientFrame = 0;
-            if (message.clientFrame != null && message.hasOwnProperty("clientFrame"))
-                object.clientFrame = message.clientFrame;
+                object.frameIndex = 0;
+            if (message.frameIndex != null && message.hasOwnProperty("frameIndex"))
+                object.frameIndex = message.frameIndex;
             return object;
         };
 
         /**
-         * Converts this battleFrameAllReq to JSON.
+         * Converts this getBattleFrameDataReq to JSON.
          * @function toJSON
-         * @memberof proto.battleFrameAllReq
+         * @memberof proto.getBattleFrameDataReq
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        battleFrameAllReq.prototype.toJSON = function toJSON() {
+        getBattleFrameDataReq.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
-         * Gets the default type url for battleFrameAllReq
+         * Gets the default type url for getBattleFrameDataReq
          * @function getTypeUrl
-         * @memberof proto.battleFrameAllReq
+         * @memberof proto.getBattleFrameDataReq
          * @static
          * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
          * @returns {string} The default type url
          */
-        battleFrameAllReq.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        getBattleFrameDataReq.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
             if (typeUrlPrefix === undefined) {
                 typeUrlPrefix = "type.googleapis.com";
             }
-            return typeUrlPrefix + "/proto.battleFrameAllReq";
+            return typeUrlPrefix + "/proto.getBattleFrameDataReq";
         };
 
-        return battleFrameAllReq;
+        return getBattleFrameDataReq;
     })();
 
-    proto.battleFrameAllResp = (function() {
+    proto.getBattleFrameDataResp = (function() {
 
         /**
-         * Properties of a battleFrameAllResp.
+         * Properties of a getBattleFrameDataResp.
          * @memberof proto
-         * @interface IbattleFrameAllResp
-         * @property {proto.RetCode|null} [code] battleFrameAllResp code
-         * @property {proto.MsgId|null} [id] battleFrameAllResp id
+         * @interface IgetBattleFrameDataResp
+         * @property {proto.RetCode|null} [code] getBattleFrameDataResp code
+         * @property {proto.MsgId|null} [id] getBattleFrameDataResp id
+         * @property {Array.<proto.IframeDataGather>|null} [data] getBattleFrameDataResp data
          */
 
         /**
-         * Constructs a new battleFrameAllResp.
+         * Constructs a new getBattleFrameDataResp.
          * @memberof proto
-         * @classdesc Represents a battleFrameAllResp.
-         * @implements IbattleFrameAllResp
+         * @classdesc Represents a getBattleFrameDataResp.
+         * @implements IgetBattleFrameDataResp
          * @constructor
-         * @param {proto.IbattleFrameAllResp=} [properties] Properties to set
+         * @param {proto.IgetBattleFrameDataResp=} [properties] Properties to set
          */
-        function battleFrameAllResp(properties) {
+        function getBattleFrameDataResp(properties) {
+            this.data = [];
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -3487,80 +3797,91 @@ $root.proto = (function() {
         }
 
         /**
-         * battleFrameAllResp code.
+         * getBattleFrameDataResp code.
          * @member {proto.RetCode} code
-         * @memberof proto.battleFrameAllResp
+         * @memberof proto.getBattleFrameDataResp
          * @instance
          */
-        battleFrameAllResp.prototype.code = 0;
+        getBattleFrameDataResp.prototype.code = 0;
 
         /**
-         * battleFrameAllResp id.
+         * getBattleFrameDataResp id.
          * @member {proto.MsgId} id
-         * @memberof proto.battleFrameAllResp
+         * @memberof proto.getBattleFrameDataResp
          * @instance
          */
-        battleFrameAllResp.prototype.id = 0;
+        getBattleFrameDataResp.prototype.id = 0;
 
         /**
-         * Creates a new battleFrameAllResp instance using the specified properties.
-         * @function create
-         * @memberof proto.battleFrameAllResp
-         * @static
-         * @param {proto.IbattleFrameAllResp=} [properties] Properties to set
-         * @returns {proto.battleFrameAllResp} battleFrameAllResp instance
+         * getBattleFrameDataResp data.
+         * @member {Array.<proto.IframeDataGather>} data
+         * @memberof proto.getBattleFrameDataResp
+         * @instance
          */
-        battleFrameAllResp.create = function create(properties) {
-            return new battleFrameAllResp(properties);
+        getBattleFrameDataResp.prototype.data = $util.emptyArray;
+
+        /**
+         * Creates a new getBattleFrameDataResp instance using the specified properties.
+         * @function create
+         * @memberof proto.getBattleFrameDataResp
+         * @static
+         * @param {proto.IgetBattleFrameDataResp=} [properties] Properties to set
+         * @returns {proto.getBattleFrameDataResp} getBattleFrameDataResp instance
+         */
+        getBattleFrameDataResp.create = function create(properties) {
+            return new getBattleFrameDataResp(properties);
         };
 
         /**
-         * Encodes the specified battleFrameAllResp message. Does not implicitly {@link proto.battleFrameAllResp.verify|verify} messages.
+         * Encodes the specified getBattleFrameDataResp message. Does not implicitly {@link proto.getBattleFrameDataResp.verify|verify} messages.
          * @function encode
-         * @memberof proto.battleFrameAllResp
+         * @memberof proto.getBattleFrameDataResp
          * @static
-         * @param {proto.IbattleFrameAllResp} message battleFrameAllResp message or plain object to encode
+         * @param {proto.IgetBattleFrameDataResp} message getBattleFrameDataResp message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        battleFrameAllResp.encode = function encode(message, writer) {
+        getBattleFrameDataResp.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
             if (message.code != null && Object.hasOwnProperty.call(message, "code"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.code);
             if (message.id != null && Object.hasOwnProperty.call(message, "id"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.id);
+            if (message.data != null && message.data.length)
+                for (var i = 0; i < message.data.length; ++i)
+                    $root.proto.frameDataGather.encode(message.data[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
             return writer;
         };
 
         /**
-         * Encodes the specified battleFrameAllResp message, length delimited. Does not implicitly {@link proto.battleFrameAllResp.verify|verify} messages.
+         * Encodes the specified getBattleFrameDataResp message, length delimited. Does not implicitly {@link proto.getBattleFrameDataResp.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof proto.battleFrameAllResp
+         * @memberof proto.getBattleFrameDataResp
          * @static
-         * @param {proto.IbattleFrameAllResp} message battleFrameAllResp message or plain object to encode
+         * @param {proto.IgetBattleFrameDataResp} message getBattleFrameDataResp message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        battleFrameAllResp.encodeDelimited = function encodeDelimited(message, writer) {
+        getBattleFrameDataResp.encodeDelimited = function encodeDelimited(message, writer) {
             return this.encode(message, writer).ldelim();
         };
 
         /**
-         * Decodes a battleFrameAllResp message from the specified reader or buffer.
+         * Decodes a getBattleFrameDataResp message from the specified reader or buffer.
          * @function decode
-         * @memberof proto.battleFrameAllResp
+         * @memberof proto.getBattleFrameDataResp
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {proto.battleFrameAllResp} battleFrameAllResp
+         * @returns {proto.getBattleFrameDataResp} getBattleFrameDataResp
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        battleFrameAllResp.decode = function decode(reader, length, error) {
+        getBattleFrameDataResp.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.proto.battleFrameAllResp();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.proto.getBattleFrameDataResp();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 if (tag === error)
@@ -3574,6 +3895,12 @@ $root.proto = (function() {
                         message.id = reader.int32();
                         break;
                     }
+                case 3: {
+                        if (!(message.data && message.data.length))
+                            message.data = [];
+                        message.data.push($root.proto.frameDataGather.decode(reader, reader.uint32()));
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -3583,30 +3910,30 @@ $root.proto = (function() {
         };
 
         /**
-         * Decodes a battleFrameAllResp message from the specified reader or buffer, length delimited.
+         * Decodes a getBattleFrameDataResp message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof proto.battleFrameAllResp
+         * @memberof proto.getBattleFrameDataResp
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {proto.battleFrameAllResp} battleFrameAllResp
+         * @returns {proto.getBattleFrameDataResp} getBattleFrameDataResp
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        battleFrameAllResp.decodeDelimited = function decodeDelimited(reader) {
+        getBattleFrameDataResp.decodeDelimited = function decodeDelimited(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
         };
 
         /**
-         * Verifies a battleFrameAllResp message.
+         * Verifies a getBattleFrameDataResp message.
          * @function verify
-         * @memberof proto.battleFrameAllResp
+         * @memberof proto.getBattleFrameDataResp
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        battleFrameAllResp.verify = function verify(message) {
+        getBattleFrameDataResp.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             if (message.code != null && message.hasOwnProperty("code"))
@@ -3635,23 +3962,35 @@ $root.proto = (function() {
                 case 8:
                 case 9:
                 case 10:
+                case 11:
+                case 12:
+                case 13:
                     break;
                 }
+            if (message.data != null && message.hasOwnProperty("data")) {
+                if (!Array.isArray(message.data))
+                    return "data: array expected";
+                for (var i = 0; i < message.data.length; ++i) {
+                    var error = $root.proto.frameDataGather.verify(message.data[i]);
+                    if (error)
+                        return "data." + error;
+                }
+            }
             return null;
         };
 
         /**
-         * Creates a battleFrameAllResp message from a plain object. Also converts values to their respective internal types.
+         * Creates a getBattleFrameDataResp message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof proto.battleFrameAllResp
+         * @memberof proto.getBattleFrameDataResp
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {proto.battleFrameAllResp} battleFrameAllResp
+         * @returns {proto.getBattleFrameDataResp} getBattleFrameDataResp
          */
-        battleFrameAllResp.fromObject = function fromObject(object) {
-            if (object instanceof $root.proto.battleFrameAllResp)
+        getBattleFrameDataResp.fromObject = function fromObject(object) {
+            if (object instanceof $root.proto.getBattleFrameDataResp)
                 return object;
-            var message = new $root.proto.battleFrameAllResp();
+            var message = new $root.proto.getBattleFrameDataResp();
             switch (object.code) {
             default:
                 if (typeof object.code === "number") {
@@ -3727,27 +4066,51 @@ $root.proto = (function() {
             case 9:
                 message.id = 9;
                 break;
-            case "ID_BattleFrame":
+            case "ID_BattleFrameDataInput":
             case 10:
                 message.id = 10;
                 break;
+            case "ID_BattleFrameDataUpdate":
+            case 11:
+                message.id = 11;
+                break;
+            case "ID_GET_BattleFrameData":
+            case 12:
+                message.id = 12;
+                break;
+            case "ID_Heartbeat":
+            case 13:
+                message.id = 13;
+                break;
+            }
+            if (object.data) {
+                if (!Array.isArray(object.data))
+                    throw TypeError(".proto.getBattleFrameDataResp.data: array expected");
+                message.data = [];
+                for (var i = 0; i < object.data.length; ++i) {
+                    if (typeof object.data[i] !== "object")
+                        throw TypeError(".proto.getBattleFrameDataResp.data: object expected");
+                    message.data[i] = $root.proto.frameDataGather.fromObject(object.data[i]);
+                }
             }
             return message;
         };
 
         /**
-         * Creates a plain object from a battleFrameAllResp message. Also converts values to other types if specified.
+         * Creates a plain object from a getBattleFrameDataResp message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof proto.battleFrameAllResp
+         * @memberof proto.getBattleFrameDataResp
          * @static
-         * @param {proto.battleFrameAllResp} message battleFrameAllResp
+         * @param {proto.getBattleFrameDataResp} message getBattleFrameDataResp
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        battleFrameAllResp.toObject = function toObject(message, options) {
+        getBattleFrameDataResp.toObject = function toObject(message, options) {
             if (!options)
                 options = {};
             var object = {};
+            if (options.arrays || options.defaults)
+                object.data = [];
             if (options.defaults) {
                 object.code = options.enums === String ? "SUCCESS" : 0;
                 object.id = options.enums === String ? "ID_FAIL" : 0;
@@ -3756,36 +4119,41 @@ $root.proto = (function() {
                 object.code = options.enums === String ? $root.proto.RetCode[message.code] === undefined ? message.code : $root.proto.RetCode[message.code] : message.code;
             if (message.id != null && message.hasOwnProperty("id"))
                 object.id = options.enums === String ? $root.proto.MsgId[message.id] === undefined ? message.id : $root.proto.MsgId[message.id] : message.id;
+            if (message.data && message.data.length) {
+                object.data = [];
+                for (var j = 0; j < message.data.length; ++j)
+                    object.data[j] = $root.proto.frameDataGather.toObject(message.data[j], options);
+            }
             return object;
         };
 
         /**
-         * Converts this battleFrameAllResp to JSON.
+         * Converts this getBattleFrameDataResp to JSON.
          * @function toJSON
-         * @memberof proto.battleFrameAllResp
+         * @memberof proto.getBattleFrameDataResp
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        battleFrameAllResp.prototype.toJSON = function toJSON() {
+        getBattleFrameDataResp.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
-         * Gets the default type url for battleFrameAllResp
+         * Gets the default type url for getBattleFrameDataResp
          * @function getTypeUrl
-         * @memberof proto.battleFrameAllResp
+         * @memberof proto.getBattleFrameDataResp
          * @static
          * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
          * @returns {string} The default type url
          */
-        battleFrameAllResp.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        getBattleFrameDataResp.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
             if (typeUrlPrefix === undefined) {
                 typeUrlPrefix = "type.googleapis.com";
             }
-            return typeUrlPrefix + "/proto.battleFrameAllResp";
+            return typeUrlPrefix + "/proto.getBattleFrameDataResp";
         };
 
-        return battleFrameAllResp;
+        return getBattleFrameDataResp;
     })();
 
     /**
@@ -3822,7 +4190,10 @@ $root.proto = (function() {
      * @property {number} ID_ClientReady=7 ID_ClientReady value
      * @property {number} ID_GameStartDownTime=8 ID_GameStartDownTime value
      * @property {number} ID_GameStart=9 ID_GameStart value
-     * @property {number} ID_BattleFrame=10 ID_BattleFrame value
+     * @property {number} ID_BattleFrameDataInput=10 ID_BattleFrameDataInput value
+     * @property {number} ID_BattleFrameDataUpdate=11 ID_BattleFrameDataUpdate value
+     * @property {number} ID_GET_BattleFrameData=12 ID_GET_BattleFrameData value
+     * @property {number} ID_Heartbeat=13 ID_Heartbeat value
      */
     proto.MsgId = (function() {
         var valuesById = {}, values = Object.create(valuesById);
@@ -3836,7 +4207,10 @@ $root.proto = (function() {
         values[valuesById[7] = "ID_ClientReady"] = 7;
         values[valuesById[8] = "ID_GameStartDownTime"] = 8;
         values[valuesById[9] = "ID_GameStart"] = 9;
-        values[valuesById[10] = "ID_BattleFrame"] = 10;
+        values[valuesById[10] = "ID_BattleFrameDataInput"] = 10;
+        values[valuesById[11] = "ID_BattleFrameDataUpdate"] = 11;
+        values[valuesById[12] = "ID_GET_BattleFrameData"] = 12;
+        values[valuesById[13] = "ID_Heartbeat"] = 13;
         return values;
     })();
 
@@ -3850,6 +4224,327 @@ $root.proto = (function() {
         var valuesById = {}, values = Object.create(valuesById);
         values[valuesById[0] = "move"] = 0;
         return values;
+    })();
+
+    proto.UserInfo = (function() {
+
+        /**
+         * Properties of a UserInfo.
+         * @memberof proto
+         * @interface IUserInfo
+         * @property {number|null} [id] UserInfo id
+         * @property {string|null} [userName] UserInfo userName
+         * @property {number|null} [createTime] UserInfo createTime
+         * @property {string|null} [account] UserInfo account
+         * @property {string|null} [head] UserInfo head
+         * @property {string|null} [password] UserInfo password
+         */
+
+        /**
+         * Constructs a new UserInfo.
+         * @memberof proto
+         * @classdesc Represents a UserInfo.
+         * @implements IUserInfo
+         * @constructor
+         * @param {proto.IUserInfo=} [properties] Properties to set
+         */
+        function UserInfo(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * UserInfo id.
+         * @member {number} id
+         * @memberof proto.UserInfo
+         * @instance
+         */
+        UserInfo.prototype.id = 0;
+
+        /**
+         * UserInfo userName.
+         * @member {string} userName
+         * @memberof proto.UserInfo
+         * @instance
+         */
+        UserInfo.prototype.userName = "";
+
+        /**
+         * UserInfo createTime.
+         * @member {number} createTime
+         * @memberof proto.UserInfo
+         * @instance
+         */
+        UserInfo.prototype.createTime = 0;
+
+        /**
+         * UserInfo account.
+         * @member {string} account
+         * @memberof proto.UserInfo
+         * @instance
+         */
+        UserInfo.prototype.account = "";
+
+        /**
+         * UserInfo head.
+         * @member {string} head
+         * @memberof proto.UserInfo
+         * @instance
+         */
+        UserInfo.prototype.head = "";
+
+        /**
+         * UserInfo password.
+         * @member {string} password
+         * @memberof proto.UserInfo
+         * @instance
+         */
+        UserInfo.prototype.password = "";
+
+        /**
+         * Creates a new UserInfo instance using the specified properties.
+         * @function create
+         * @memberof proto.UserInfo
+         * @static
+         * @param {proto.IUserInfo=} [properties] Properties to set
+         * @returns {proto.UserInfo} UserInfo instance
+         */
+        UserInfo.create = function create(properties) {
+            return new UserInfo(properties);
+        };
+
+        /**
+         * Encodes the specified UserInfo message. Does not implicitly {@link proto.UserInfo.verify|verify} messages.
+         * @function encode
+         * @memberof proto.UserInfo
+         * @static
+         * @param {proto.IUserInfo} message UserInfo message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        UserInfo.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.id != null && Object.hasOwnProperty.call(message, "id"))
+                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.id);
+            if (message.userName != null && Object.hasOwnProperty.call(message, "userName"))
+                writer.uint32(/* id 2, wireType 2 =*/18).string(message.userName);
+            if (message.createTime != null && Object.hasOwnProperty.call(message, "createTime"))
+                writer.uint32(/* id 3, wireType 0 =*/24).int32(message.createTime);
+            if (message.account != null && Object.hasOwnProperty.call(message, "account"))
+                writer.uint32(/* id 4, wireType 2 =*/34).string(message.account);
+            if (message.head != null && Object.hasOwnProperty.call(message, "head"))
+                writer.uint32(/* id 5, wireType 2 =*/42).string(message.head);
+            if (message.password != null && Object.hasOwnProperty.call(message, "password"))
+                writer.uint32(/* id 6, wireType 2 =*/50).string(message.password);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified UserInfo message, length delimited. Does not implicitly {@link proto.UserInfo.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof proto.UserInfo
+         * @static
+         * @param {proto.IUserInfo} message UserInfo message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        UserInfo.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a UserInfo message from the specified reader or buffer.
+         * @function decode
+         * @memberof proto.UserInfo
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {proto.UserInfo} UserInfo
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        UserInfo.decode = function decode(reader, length, error) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.proto.UserInfo();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                if (tag === error)
+                    break;
+                switch (tag >>> 3) {
+                case 1: {
+                        message.id = reader.int32();
+                        break;
+                    }
+                case 2: {
+                        message.userName = reader.string();
+                        break;
+                    }
+                case 3: {
+                        message.createTime = reader.int32();
+                        break;
+                    }
+                case 4: {
+                        message.account = reader.string();
+                        break;
+                    }
+                case 5: {
+                        message.head = reader.string();
+                        break;
+                    }
+                case 6: {
+                        message.password = reader.string();
+                        break;
+                    }
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a UserInfo message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof proto.UserInfo
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {proto.UserInfo} UserInfo
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        UserInfo.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a UserInfo message.
+         * @function verify
+         * @memberof proto.UserInfo
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        UserInfo.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.id != null && message.hasOwnProperty("id"))
+                if (!$util.isInteger(message.id))
+                    return "id: integer expected";
+            if (message.userName != null && message.hasOwnProperty("userName"))
+                if (!$util.isString(message.userName))
+                    return "userName: string expected";
+            if (message.createTime != null && message.hasOwnProperty("createTime"))
+                if (!$util.isInteger(message.createTime))
+                    return "createTime: integer expected";
+            if (message.account != null && message.hasOwnProperty("account"))
+                if (!$util.isString(message.account))
+                    return "account: string expected";
+            if (message.head != null && message.hasOwnProperty("head"))
+                if (!$util.isString(message.head))
+                    return "head: string expected";
+            if (message.password != null && message.hasOwnProperty("password"))
+                if (!$util.isString(message.password))
+                    return "password: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a UserInfo message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof proto.UserInfo
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {proto.UserInfo} UserInfo
+         */
+        UserInfo.fromObject = function fromObject(object) {
+            if (object instanceof $root.proto.UserInfo)
+                return object;
+            var message = new $root.proto.UserInfo();
+            if (object.id != null)
+                message.id = object.id | 0;
+            if (object.userName != null)
+                message.userName = String(object.userName);
+            if (object.createTime != null)
+                message.createTime = object.createTime | 0;
+            if (object.account != null)
+                message.account = String(object.account);
+            if (object.head != null)
+                message.head = String(object.head);
+            if (object.password != null)
+                message.password = String(object.password);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a UserInfo message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof proto.UserInfo
+         * @static
+         * @param {proto.UserInfo} message UserInfo
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        UserInfo.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.id = 0;
+                object.userName = "";
+                object.createTime = 0;
+                object.account = "";
+                object.head = "";
+                object.password = "";
+            }
+            if (message.id != null && message.hasOwnProperty("id"))
+                object.id = message.id;
+            if (message.userName != null && message.hasOwnProperty("userName"))
+                object.userName = message.userName;
+            if (message.createTime != null && message.hasOwnProperty("createTime"))
+                object.createTime = message.createTime;
+            if (message.account != null && message.hasOwnProperty("account"))
+                object.account = message.account;
+            if (message.head != null && message.hasOwnProperty("head"))
+                object.head = message.head;
+            if (message.password != null && message.hasOwnProperty("password"))
+                object.password = message.password;
+            return object;
+        };
+
+        /**
+         * Converts this UserInfo to JSON.
+         * @function toJSON
+         * @memberof proto.UserInfo
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        UserInfo.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for UserInfo
+         * @function getTypeUrl
+         * @memberof proto.UserInfo
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        UserInfo.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/proto.UserInfo";
+        };
+
+        return UserInfo;
     })();
 
     proto.CommonResp = (function() {
@@ -4446,6 +5141,9 @@ $root.proto = (function() {
                 case 8:
                 case 9:
                 case 10:
+                case 11:
+                case 12:
+                case 13:
                     break;
                 }
             if (message.code != null && message.hasOwnProperty("code"))
@@ -4524,9 +5222,21 @@ $root.proto = (function() {
             case 9:
                 message.id = 9;
                 break;
-            case "ID_BattleFrame":
+            case "ID_BattleFrameDataInput":
             case 10:
                 message.id = 10;
+                break;
+            case "ID_BattleFrameDataUpdate":
+            case 11:
+                message.id = 11;
+                break;
+            case "ID_GET_BattleFrameData":
+            case 12:
+                message.id = 12;
+                break;
+            case "ID_Heartbeat":
+            case 13:
+                message.id = 13;
                 break;
             }
             switch (object.code) {
@@ -4616,6 +5326,525 @@ $root.proto = (function() {
         };
 
         return CommonFailResp;
+    })();
+
+    proto.HeartbeatReq = (function() {
+
+        /**
+         * Properties of a HeartbeatReq.
+         * @memberof proto
+         * @interface IHeartbeatReq
+         */
+
+        /**
+         * Constructs a new HeartbeatReq.
+         * @memberof proto
+         * @classdesc Represents a HeartbeatReq.
+         * @implements IHeartbeatReq
+         * @constructor
+         * @param {proto.IHeartbeatReq=} [properties] Properties to set
+         */
+        function HeartbeatReq(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * Creates a new HeartbeatReq instance using the specified properties.
+         * @function create
+         * @memberof proto.HeartbeatReq
+         * @static
+         * @param {proto.IHeartbeatReq=} [properties] Properties to set
+         * @returns {proto.HeartbeatReq} HeartbeatReq instance
+         */
+        HeartbeatReq.create = function create(properties) {
+            return new HeartbeatReq(properties);
+        };
+
+        /**
+         * Encodes the specified HeartbeatReq message. Does not implicitly {@link proto.HeartbeatReq.verify|verify} messages.
+         * @function encode
+         * @memberof proto.HeartbeatReq
+         * @static
+         * @param {proto.IHeartbeatReq} message HeartbeatReq message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        HeartbeatReq.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            return writer;
+        };
+
+        /**
+         * Encodes the specified HeartbeatReq message, length delimited. Does not implicitly {@link proto.HeartbeatReq.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof proto.HeartbeatReq
+         * @static
+         * @param {proto.IHeartbeatReq} message HeartbeatReq message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        HeartbeatReq.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a HeartbeatReq message from the specified reader or buffer.
+         * @function decode
+         * @memberof proto.HeartbeatReq
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {proto.HeartbeatReq} HeartbeatReq
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        HeartbeatReq.decode = function decode(reader, length, error) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.proto.HeartbeatReq();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                if (tag === error)
+                    break;
+                switch (tag >>> 3) {
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a HeartbeatReq message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof proto.HeartbeatReq
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {proto.HeartbeatReq} HeartbeatReq
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        HeartbeatReq.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a HeartbeatReq message.
+         * @function verify
+         * @memberof proto.HeartbeatReq
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        HeartbeatReq.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            return null;
+        };
+
+        /**
+         * Creates a HeartbeatReq message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof proto.HeartbeatReq
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {proto.HeartbeatReq} HeartbeatReq
+         */
+        HeartbeatReq.fromObject = function fromObject(object) {
+            if (object instanceof $root.proto.HeartbeatReq)
+                return object;
+            return new $root.proto.HeartbeatReq();
+        };
+
+        /**
+         * Creates a plain object from a HeartbeatReq message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof proto.HeartbeatReq
+         * @static
+         * @param {proto.HeartbeatReq} message HeartbeatReq
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        HeartbeatReq.toObject = function toObject() {
+            return {};
+        };
+
+        /**
+         * Converts this HeartbeatReq to JSON.
+         * @function toJSON
+         * @memberof proto.HeartbeatReq
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        HeartbeatReq.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for HeartbeatReq
+         * @function getTypeUrl
+         * @memberof proto.HeartbeatReq
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        HeartbeatReq.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/proto.HeartbeatReq";
+        };
+
+        return HeartbeatReq;
+    })();
+
+    proto.HeartbeatResp = (function() {
+
+        /**
+         * Properties of a HeartbeatResp.
+         * @memberof proto
+         * @interface IHeartbeatResp
+         * @property {proto.RetCode|null} [code] HeartbeatResp code
+         * @property {proto.MsgId|null} [id] HeartbeatResp id
+         */
+
+        /**
+         * Constructs a new HeartbeatResp.
+         * @memberof proto
+         * @classdesc Represents a HeartbeatResp.
+         * @implements IHeartbeatResp
+         * @constructor
+         * @param {proto.IHeartbeatResp=} [properties] Properties to set
+         */
+        function HeartbeatResp(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * HeartbeatResp code.
+         * @member {proto.RetCode} code
+         * @memberof proto.HeartbeatResp
+         * @instance
+         */
+        HeartbeatResp.prototype.code = 0;
+
+        /**
+         * HeartbeatResp id.
+         * @member {proto.MsgId} id
+         * @memberof proto.HeartbeatResp
+         * @instance
+         */
+        HeartbeatResp.prototype.id = 0;
+
+        /**
+         * Creates a new HeartbeatResp instance using the specified properties.
+         * @function create
+         * @memberof proto.HeartbeatResp
+         * @static
+         * @param {proto.IHeartbeatResp=} [properties] Properties to set
+         * @returns {proto.HeartbeatResp} HeartbeatResp instance
+         */
+        HeartbeatResp.create = function create(properties) {
+            return new HeartbeatResp(properties);
+        };
+
+        /**
+         * Encodes the specified HeartbeatResp message. Does not implicitly {@link proto.HeartbeatResp.verify|verify} messages.
+         * @function encode
+         * @memberof proto.HeartbeatResp
+         * @static
+         * @param {proto.IHeartbeatResp} message HeartbeatResp message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        HeartbeatResp.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.code != null && Object.hasOwnProperty.call(message, "code"))
+                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.code);
+            if (message.id != null && Object.hasOwnProperty.call(message, "id"))
+                writer.uint32(/* id 2, wireType 0 =*/16).int32(message.id);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified HeartbeatResp message, length delimited. Does not implicitly {@link proto.HeartbeatResp.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof proto.HeartbeatResp
+         * @static
+         * @param {proto.IHeartbeatResp} message HeartbeatResp message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        HeartbeatResp.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a HeartbeatResp message from the specified reader or buffer.
+         * @function decode
+         * @memberof proto.HeartbeatResp
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {proto.HeartbeatResp} HeartbeatResp
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        HeartbeatResp.decode = function decode(reader, length, error) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.proto.HeartbeatResp();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                if (tag === error)
+                    break;
+                switch (tag >>> 3) {
+                case 1: {
+                        message.code = reader.int32();
+                        break;
+                    }
+                case 2: {
+                        message.id = reader.int32();
+                        break;
+                    }
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a HeartbeatResp message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof proto.HeartbeatResp
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {proto.HeartbeatResp} HeartbeatResp
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        HeartbeatResp.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a HeartbeatResp message.
+         * @function verify
+         * @memberof proto.HeartbeatResp
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        HeartbeatResp.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.code != null && message.hasOwnProperty("code"))
+                switch (message.code) {
+                default:
+                    return "code: enum value expected";
+                case 0:
+                case -1:
+                case -2:
+                case -3:
+                case -4:
+                    break;
+                }
+            if (message.id != null && message.hasOwnProperty("id"))
+                switch (message.id) {
+                default:
+                    return "id: enum value expected";
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+                case 7:
+                case 8:
+                case 9:
+                case 10:
+                case 11:
+                case 12:
+                case 13:
+                    break;
+                }
+            return null;
+        };
+
+        /**
+         * Creates a HeartbeatResp message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof proto.HeartbeatResp
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {proto.HeartbeatResp} HeartbeatResp
+         */
+        HeartbeatResp.fromObject = function fromObject(object) {
+            if (object instanceof $root.proto.HeartbeatResp)
+                return object;
+            var message = new $root.proto.HeartbeatResp();
+            switch (object.code) {
+            default:
+                if (typeof object.code === "number") {
+                    message.code = object.code;
+                    break;
+                }
+                break;
+            case "SUCCESS":
+            case 0:
+                message.code = 0;
+                break;
+            case "FAIL":
+            case -1:
+                message.code = -1;
+                break;
+            case "NOTACCOUNT":
+            case -2:
+                message.code = -2;
+                break;
+            case "ACCOUNTEXIST":
+            case -3:
+                message.code = -3;
+                break;
+            case "ACCOUNTNAMEEXIST":
+            case -4:
+                message.code = -4;
+                break;
+            }
+            switch (object.id) {
+            default:
+                if (typeof object.id === "number") {
+                    message.id = object.id;
+                    break;
+                }
+                break;
+            case "ID_FAIL":
+            case 0:
+                message.id = 0;
+                break;
+            case "ID_UserReqister":
+            case 1:
+                message.id = 1;
+                break;
+            case "ID_UserLogin":
+            case 2:
+                message.id = 2;
+                break;
+            case "ID_HeroInfo":
+            case 3:
+                message.id = 3;
+                break;
+            case "ID_HeroSwitch":
+            case 4:
+                message.id = 4;
+                break;
+            case "ID_UserHeadChange":
+            case 5:
+                message.id = 5;
+                break;
+            case "ID_Matching":
+            case 6:
+                message.id = 6;
+                break;
+            case "ID_ClientReady":
+            case 7:
+                message.id = 7;
+                break;
+            case "ID_GameStartDownTime":
+            case 8:
+                message.id = 8;
+                break;
+            case "ID_GameStart":
+            case 9:
+                message.id = 9;
+                break;
+            case "ID_BattleFrameDataInput":
+            case 10:
+                message.id = 10;
+                break;
+            case "ID_BattleFrameDataUpdate":
+            case 11:
+                message.id = 11;
+                break;
+            case "ID_GET_BattleFrameData":
+            case 12:
+                message.id = 12;
+                break;
+            case "ID_Heartbeat":
+            case 13:
+                message.id = 13;
+                break;
+            }
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a HeartbeatResp message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof proto.HeartbeatResp
+         * @static
+         * @param {proto.HeartbeatResp} message HeartbeatResp
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        HeartbeatResp.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.code = options.enums === String ? "SUCCESS" : 0;
+                object.id = options.enums === String ? "ID_FAIL" : 0;
+            }
+            if (message.code != null && message.hasOwnProperty("code"))
+                object.code = options.enums === String ? $root.proto.RetCode[message.code] === undefined ? message.code : $root.proto.RetCode[message.code] : message.code;
+            if (message.id != null && message.hasOwnProperty("id"))
+                object.id = options.enums === String ? $root.proto.MsgId[message.id] === undefined ? message.id : $root.proto.MsgId[message.id] : message.id;
+            return object;
+        };
+
+        /**
+         * Converts this HeartbeatResp to JSON.
+         * @function toJSON
+         * @memberof proto.HeartbeatResp
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        HeartbeatResp.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for HeartbeatResp
+         * @function getTypeUrl
+         * @memberof proto.HeartbeatResp
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        HeartbeatResp.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/proto.HeartbeatResp";
+        };
+
+        return HeartbeatResp;
     })();
 
     proto.HeroInfo = (function() {
@@ -5189,6 +6418,9 @@ $root.proto = (function() {
                 case 8:
                 case 9:
                 case 10:
+                case 11:
+                case 12:
+                case 13:
                     break;
                 }
             if (message.heroInfo != null && message.hasOwnProperty("heroInfo")) {
@@ -5286,9 +6518,21 @@ $root.proto = (function() {
             case 9:
                 message.id = 9;
                 break;
-            case "ID_BattleFrame":
+            case "ID_BattleFrameDataInput":
             case 10:
                 message.id = 10;
+                break;
+            case "ID_BattleFrameDataUpdate":
+            case 11:
+                message.id = 11;
+                break;
+            case "ID_GET_BattleFrameData":
+            case 12:
+                message.id = 12;
+                break;
+            case "ID_Heartbeat":
+            case 13:
+                message.id = 13;
                 break;
             }
             if (object.heroInfo != null) {
@@ -5749,6 +6993,9 @@ $root.proto = (function() {
                 case 8:
                 case 9:
                 case 10:
+                case 11:
+                case 12:
+                case 13:
                     break;
                 }
             if (message.heroInfo != null && message.hasOwnProperty("heroInfo")) {
@@ -5846,9 +7093,21 @@ $root.proto = (function() {
             case 9:
                 message.id = 9;
                 break;
-            case "ID_BattleFrame":
+            case "ID_BattleFrameDataInput":
             case 10:
                 message.id = 10;
+                break;
+            case "ID_BattleFrameDataUpdate":
+            case 11:
+                message.id = 11;
+                break;
+            case "ID_GET_BattleFrameData":
+            case 12:
+                message.id = 12;
+                break;
+            case "ID_Heartbeat":
+            case 13:
+                message.id = 13;
                 break;
             }
             if (object.heroInfo != null) {
@@ -6341,6 +7600,9 @@ $root.proto = (function() {
                 case 8:
                 case 9:
                 case 10:
+                case 11:
+                case 12:
+                case 13:
                     break;
                 }
             return null;
@@ -6433,9 +7695,21 @@ $root.proto = (function() {
             case 9:
                 message.id = 9;
                 break;
-            case "ID_BattleFrame":
+            case "ID_BattleFrameDataInput":
             case 10:
                 message.id = 10;
+                break;
+            case "ID_BattleFrameDataUpdate":
+            case 11:
+                message.id = 11;
+                break;
+            case "ID_GET_BattleFrameData":
+            case 12:
+                message.id = 12;
+                break;
+            case "ID_Heartbeat":
+            case 13:
+                message.id = 13;
                 break;
             }
             return message;
@@ -6912,6 +8186,9 @@ $root.proto = (function() {
                 case 8:
                 case 9:
                 case 10:
+                case 11:
+                case 12:
+                case 13:
                     break;
                 }
             if (message.userInfo != null && message.hasOwnProperty("userInfo")) {
@@ -7009,9 +8286,21 @@ $root.proto = (function() {
             case 9:
                 message.id = 9;
                 break;
-            case "ID_BattleFrame":
+            case "ID_BattleFrameDataInput":
             case 10:
                 message.id = 10;
+                break;
+            case "ID_BattleFrameDataUpdate":
+            case 11:
+                message.id = 11;
+                break;
+            case "ID_GET_BattleFrameData":
+            case 12:
+                message.id = 12;
+                break;
+            case "ID_Heartbeat":
+            case 13:
+                message.id = 13;
                 break;
             }
             if (object.userInfo != null) {
@@ -7076,304 +8365,6 @@ $root.proto = (function() {
         };
 
         return LoginResp;
-    })();
-
-    proto.UserInfo = (function() {
-
-        /**
-         * Properties of a UserInfo.
-         * @memberof proto
-         * @interface IUserInfo
-         * @property {number|null} [id] UserInfo id
-         * @property {string|null} [userName] UserInfo userName
-         * @property {number|null} [createTime] UserInfo createTime
-         * @property {string|null} [account] UserInfo account
-         * @property {string|null} [head] UserInfo head
-         */
-
-        /**
-         * Constructs a new UserInfo.
-         * @memberof proto
-         * @classdesc Represents a UserInfo.
-         * @implements IUserInfo
-         * @constructor
-         * @param {proto.IUserInfo=} [properties] Properties to set
-         */
-        function UserInfo(properties) {
-            if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
-                        this[keys[i]] = properties[keys[i]];
-        }
-
-        /**
-         * UserInfo id.
-         * @member {number} id
-         * @memberof proto.UserInfo
-         * @instance
-         */
-        UserInfo.prototype.id = 0;
-
-        /**
-         * UserInfo userName.
-         * @member {string} userName
-         * @memberof proto.UserInfo
-         * @instance
-         */
-        UserInfo.prototype.userName = "";
-
-        /**
-         * UserInfo createTime.
-         * @member {number} createTime
-         * @memberof proto.UserInfo
-         * @instance
-         */
-        UserInfo.prototype.createTime = 0;
-
-        /**
-         * UserInfo account.
-         * @member {string} account
-         * @memberof proto.UserInfo
-         * @instance
-         */
-        UserInfo.prototype.account = "";
-
-        /**
-         * UserInfo head.
-         * @member {string} head
-         * @memberof proto.UserInfo
-         * @instance
-         */
-        UserInfo.prototype.head = "";
-
-        /**
-         * Creates a new UserInfo instance using the specified properties.
-         * @function create
-         * @memberof proto.UserInfo
-         * @static
-         * @param {proto.IUserInfo=} [properties] Properties to set
-         * @returns {proto.UserInfo} UserInfo instance
-         */
-        UserInfo.create = function create(properties) {
-            return new UserInfo(properties);
-        };
-
-        /**
-         * Encodes the specified UserInfo message. Does not implicitly {@link proto.UserInfo.verify|verify} messages.
-         * @function encode
-         * @memberof proto.UserInfo
-         * @static
-         * @param {proto.IUserInfo} message UserInfo message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        UserInfo.encode = function encode(message, writer) {
-            if (!writer)
-                writer = $Writer.create();
-            if (message.id != null && Object.hasOwnProperty.call(message, "id"))
-                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.id);
-            if (message.userName != null && Object.hasOwnProperty.call(message, "userName"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.userName);
-            if (message.createTime != null && Object.hasOwnProperty.call(message, "createTime"))
-                writer.uint32(/* id 3, wireType 0 =*/24).int32(message.createTime);
-            if (message.account != null && Object.hasOwnProperty.call(message, "account"))
-                writer.uint32(/* id 4, wireType 2 =*/34).string(message.account);
-            if (message.head != null && Object.hasOwnProperty.call(message, "head"))
-                writer.uint32(/* id 5, wireType 2 =*/42).string(message.head);
-            return writer;
-        };
-
-        /**
-         * Encodes the specified UserInfo message, length delimited. Does not implicitly {@link proto.UserInfo.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof proto.UserInfo
-         * @static
-         * @param {proto.IUserInfo} message UserInfo message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        UserInfo.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
-         * Decodes a UserInfo message from the specified reader or buffer.
-         * @function decode
-         * @memberof proto.UserInfo
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @param {number} [length] Message length if known beforehand
-         * @returns {proto.UserInfo} UserInfo
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        UserInfo.decode = function decode(reader, length, error) {
-            if (!(reader instanceof $Reader))
-                reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.proto.UserInfo();
-            while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 1: {
-                        message.id = reader.int32();
-                        break;
-                    }
-                case 2: {
-                        message.userName = reader.string();
-                        break;
-                    }
-                case 3: {
-                        message.createTime = reader.int32();
-                        break;
-                    }
-                case 4: {
-                        message.account = reader.string();
-                        break;
-                    }
-                case 5: {
-                        message.head = reader.string();
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
-                    break;
-                }
-            }
-            return message;
-        };
-
-        /**
-         * Decodes a UserInfo message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof proto.UserInfo
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {proto.UserInfo} UserInfo
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        UserInfo.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a UserInfo message.
-         * @function verify
-         * @memberof proto.UserInfo
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        UserInfo.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.id != null && message.hasOwnProperty("id"))
-                if (!$util.isInteger(message.id))
-                    return "id: integer expected";
-            if (message.userName != null && message.hasOwnProperty("userName"))
-                if (!$util.isString(message.userName))
-                    return "userName: string expected";
-            if (message.createTime != null && message.hasOwnProperty("createTime"))
-                if (!$util.isInteger(message.createTime))
-                    return "createTime: integer expected";
-            if (message.account != null && message.hasOwnProperty("account"))
-                if (!$util.isString(message.account))
-                    return "account: string expected";
-            if (message.head != null && message.hasOwnProperty("head"))
-                if (!$util.isString(message.head))
-                    return "head: string expected";
-            return null;
-        };
-
-        /**
-         * Creates a UserInfo message from a plain object. Also converts values to their respective internal types.
-         * @function fromObject
-         * @memberof proto.UserInfo
-         * @static
-         * @param {Object.<string,*>} object Plain object
-         * @returns {proto.UserInfo} UserInfo
-         */
-        UserInfo.fromObject = function fromObject(object) {
-            if (object instanceof $root.proto.UserInfo)
-                return object;
-            var message = new $root.proto.UserInfo();
-            if (object.id != null)
-                message.id = object.id | 0;
-            if (object.userName != null)
-                message.userName = String(object.userName);
-            if (object.createTime != null)
-                message.createTime = object.createTime | 0;
-            if (object.account != null)
-                message.account = String(object.account);
-            if (object.head != null)
-                message.head = String(object.head);
-            return message;
-        };
-
-        /**
-         * Creates a plain object from a UserInfo message. Also converts values to other types if specified.
-         * @function toObject
-         * @memberof proto.UserInfo
-         * @static
-         * @param {proto.UserInfo} message UserInfo
-         * @param {$protobuf.IConversionOptions} [options] Conversion options
-         * @returns {Object.<string,*>} Plain object
-         */
-        UserInfo.toObject = function toObject(message, options) {
-            if (!options)
-                options = {};
-            var object = {};
-            if (options.defaults) {
-                object.id = 0;
-                object.userName = "";
-                object.createTime = 0;
-                object.account = "";
-                object.head = "";
-            }
-            if (message.id != null && message.hasOwnProperty("id"))
-                object.id = message.id;
-            if (message.userName != null && message.hasOwnProperty("userName"))
-                object.userName = message.userName;
-            if (message.createTime != null && message.hasOwnProperty("createTime"))
-                object.createTime = message.createTime;
-            if (message.account != null && message.hasOwnProperty("account"))
-                object.account = message.account;
-            if (message.head != null && message.hasOwnProperty("head"))
-                object.head = message.head;
-            return object;
-        };
-
-        /**
-         * Converts this UserInfo to JSON.
-         * @function toJSON
-         * @memberof proto.UserInfo
-         * @instance
-         * @returns {Object.<string,*>} JSON object
-         */
-        UserInfo.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for UserInfo
-         * @function getTypeUrl
-         * @memberof proto.UserInfo
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        UserInfo.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/proto.UserInfo";
-        };
-
-        return UserInfo;
     })();
 
     proto.userHeadChangeReq = (function() {
@@ -7770,6 +8761,9 @@ $root.proto = (function() {
                 case 8:
                 case 9:
                 case 10:
+                case 11:
+                case 12:
+                case 13:
                     break;
                 }
             if (message.headId != null && message.hasOwnProperty("headId"))
@@ -7865,9 +8859,21 @@ $root.proto = (function() {
             case 9:
                 message.id = 9;
                 break;
-            case "ID_BattleFrame":
+            case "ID_BattleFrameDataInput":
             case 10:
                 message.id = 10;
+                break;
+            case "ID_BattleFrameDataUpdate":
+            case 11:
+                message.id = 11;
+                break;
+            case "ID_GET_BattleFrameData":
+            case 12:
+                message.id = 12;
+                break;
+            case "ID_Heartbeat":
+            case 13:
+                message.id = 13;
                 break;
             }
             if (object.headId != null)

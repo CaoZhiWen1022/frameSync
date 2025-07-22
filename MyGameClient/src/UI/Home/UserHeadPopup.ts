@@ -6,6 +6,7 @@ import { openUIparam } from "../../FGUIFrame/OpenUIParam";
 import { UIPopup } from "../../FGUIFrame/UIPopup";
 import { GameConfig } from "../../GameConfig/GameConfig";
 import { LoginLogic } from "../../Logic/LoginLogic";
+import { userInfo } from "../../Logic/UserInfo";
 import { UserSettingLogic } from "../../Logic/UserSettingLogic";
 
 export class UserHeadPopup extends UIPopup {
@@ -28,7 +29,7 @@ export class UserHeadPopup extends UIPopup {
     }
 
     initSele() {
-        this.curSeleID = LoginLogic.userInfo.head;
+        this.curSeleID = userInfo.userInfo.head;
         let index = GameConfig.ins.userHand.findIndex(v => v.id == this.curSeleID);
         this.m_ui.m_ls.selectedIndex = index;
         this.m_ui.m_use.selectedIndex = 0;
@@ -36,11 +37,11 @@ export class UserHeadPopup extends UIPopup {
 
     onClickItem(item: UI_UserHeadItem) {
         this.curSeleID = item.data;
-        this.m_ui.m_use.selectedIndex = this.curSeleID == LoginLogic.userInfo.head ? 0 : 1;
+        this.m_ui.m_use.selectedIndex = this.curSeleID == userInfo.userInfo.head ? 0 : 1;
     }
 
     onClickUseBtn() {
-        if(this.curSeleID == LoginLogic.userInfo.head) return;
+        if(this.curSeleID == userInfo.userInfo.head) return;
         UserSettingLogic.userHeadChangeReq(this.curSeleID);
     }
 }

@@ -2,10 +2,10 @@ import { GameEventMgr, GameEventType } from "../common/GameEventMgr";
 import { GameNetMgr } from "../GameNet/GameNetMgr";
 import { proto } from "../protos/proto";
 import { TipPanel } from "../UI/common/TipPanel";
+import { userInfo } from "./UserInfo";
 
 export class LoginLogic {
 
-    static userInfo: proto.IUserInfo;
 
     public static loginReq(account: string, password: string) {
         let req = proto.LoginReq.create({
@@ -18,8 +18,7 @@ export class LoginLogic {
     public static loginResp(res: proto.LoginResp) {
         console.log('收到登录返回', res);
         if (res.code == proto.RetCode.SUCCESS) {
-            this.userInfo = res.userInfo;
-            console.log('登录成功', this.userInfo);
+            userInfo.onLogin(res.userInfo);
             GameEventMgr.instance.event(GameEventType.LoginSuccess);
         }
     }

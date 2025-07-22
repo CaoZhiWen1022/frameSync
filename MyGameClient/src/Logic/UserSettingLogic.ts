@@ -2,6 +2,7 @@ import { GameEventMgr, GameEventType } from "../common/GameEventMgr";
 import { GameNetMgr } from "../GameNet/GameNetMgr";
 import { proto } from "../protos/proto";
 import { LoginLogic } from "./LoginLogic";
+import { userInfo } from "./UserInfo";
 
 export class UserSettingLogic {
 
@@ -11,7 +12,7 @@ export class UserSettingLogic {
     }
 
     public static userHeadChangeResp(data: proto.userHeadChangeResp) {
-        LoginLogic.userInfo.head = data.headId;
+        userInfo.userInfo.head = data.headId;
         GameEventMgr.instance.event(GameEventType.UserHeadChange);
     }
 

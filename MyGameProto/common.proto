@@ -18,3 +18,12 @@ message CommonFailResp{
   RetCode code=2;
   string message=3;
 }
+
+message HeartbeatReq{
+  
+}
+
+message HeartbeatResp{
+  RetCode code = 1;
+  MsgId id = 2;
+}

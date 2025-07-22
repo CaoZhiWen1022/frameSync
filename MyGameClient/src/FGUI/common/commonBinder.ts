@@ -5,6 +5,7 @@ import UI_FullScreenMaskPanel from "./UI_FullScreenMaskPanel";
 import UI_PopupMaskPanel from "./UI_PopupMaskPanel";
 import UI_TipPanel from "./UI_TipPanel";
 import UI_tipsCom from "./UI_tipsCom";
+import UI_CommonPopup from "./UI_CommonPopup";
 
 export default class commonBinder {
 	public static bindAll():void {
@@ -13,5 +14,6 @@ export default class commonBinder {
 		fgui.UIObjectFactory.setExtension(UI_PopupMaskPanel.URL, UI_PopupMaskPanel);
 		fgui.UIObjectFactory.setExtension(UI_TipPanel.URL, UI_TipPanel);
 		fgui.UIObjectFactory.setExtension(UI_tipsCom.URL, UI_tipsCom);
+		fgui.UIObjectFactory.setExtension(UI_CommonPopup.URL, UI_CommonPopup);
 	}
 }

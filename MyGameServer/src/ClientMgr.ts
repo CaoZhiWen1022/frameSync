@@ -1,4 +1,5 @@
 import { WebSocket } from 'ws';
+import { EventMgr, EventType } from './EventMgr';
 export class ClientMgr {
     public static clients: Map<WebSocket, number> = new Map();
 
@@ -20,6 +21,8 @@ export class ClientMgr {
     }
 
     static removeClient(ws: WebSocket) {
+        let userId = this.clients.get(ws);
+        if (userId) EventMgr.ins.event(EventType.ClientOffline, userId);
         this.clients.delete(ws);
     }
 }

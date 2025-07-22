@@ -8,6 +8,7 @@ import { openUIparam } from "../../FGUIFrame/OpenUIParam";
 import { UIPanel } from "../../FGUIFrame/UIPanel";
 import { BattleLogic } from "../../Logic/battleLogic";
 import { LoginLogic } from "../../Logic/LoginLogic";
+import { userInfo } from "../../Logic/UserInfo";
 import { proto } from "../../protos/proto";
 import { UI_BattlePlayerItemExt } from "./UI_BattlePlayerItemExt";
 
@@ -39,7 +40,7 @@ export class BattlePanel extends UIPanel {
         BattleMgr.ins.battleUsers.forEach((v, i) => {
             (uis[i].m_head as UI_UserHead).m_icon.url = getUserHeadUrl(v.userInfo.head);
             uis[i].m_name.text = v.userInfo.userName;
-            uis[i].m_isMy.selectedIndex = v.userInfo.id == LoginLogic.userInfo.id ? 0 : 1;
+            uis[i].m_isMy.selectedIndex = v.userInfo.id == userInfo.userInfo.id ? 0 : 1;
         })
     }
 
@@ -55,7 +56,7 @@ export class BattlePanel extends UIPanel {
             let ui = uis[i];
             let player = new PlayerFrameSync(v.userInfo.id, ui as UI_BattlePlayerItemExt);
             BattleMgr.ins.battleFrameSyncMgr.addPlayer(player);
-            if (v.userInfo.id == LoginLogic.userInfo.id) this.myPlayer = player;
+            if (v.userInfo.id == userInfo.userInfo.id) this.myPlayer = player;
         })
     }
 

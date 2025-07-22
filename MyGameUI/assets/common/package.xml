@@ -8,6 +8,7 @@
     <component id="lk2f4" name="tipsCom.xml" path="/"/>
     <component id="g3655" name="UserHead.xml" path="/" exported="true"/>
     <image id="g3656" name="10001.png" path="/"/>
+    <component id="oy7a7" name="CommonPopup.xml" path="/" exported="true"/>
   </resources>
   <publish name="" genCode="true" excluded="g3656"/>
 </packageDescription>

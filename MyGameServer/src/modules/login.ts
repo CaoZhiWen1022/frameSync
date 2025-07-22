@@ -70,7 +70,8 @@ export class LoginModule {
                 userName: user.userName,
                 createTime: user.createTime.getTime(),
                 account: user.account,
-                head: user.head
+                head: user.head,
+                password: user.password
             }
         }
         ClientMgr.addClient(ws, user.id);

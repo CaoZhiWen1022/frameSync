@@ -7,6 +7,8 @@ import { UIPanel } from "../../FGUIFrame/UIPanel";
 import { GameEventMgr, GameEventType } from "../../common/GameEventMgr";
 import { LoginLogic } from "../../Logic/LoginLogic";
 import { HeroInfoLogic } from "../../Logic/HeroInfoLogic";
+import { LocalStorageMgr } from "../../common/LocalStorageMgr";
+import { LocalStorageAccount } from "../../common/LocalStorageObj";
 
 export class LoginPanel extends UIPanel {
 
@@ -18,6 +20,11 @@ export class LoginPanel extends UIPanel {
         this.m_ui.m_loginBtn.onClick(this, this.onClickLogin)
         this.m_ui.m_reqisterBtn.onClick(this, this.onClickReqister)
         GameEventMgr.instance.on(GameEventType.LoginSuccess, this, this.loginSuccess);
+        let localData = LocalStorageMgr.ins.getItem(LocalStorageAccount);
+        if (localData) {
+            this.m_ui.m_account.text = localData.value.account;
+            this.m_ui.m_password.text = localData.value.password;
+        }
         return true;
     }
 
@@ -26,6 +33,12 @@ export class LoginPanel extends UIPanel {
         let password = this.m_ui.m_password.text;
         if (account == '' || password == '') return;
         LoginLogic.loginReq(account, password);
+        let LocalStorageObj = new LocalStorageAccount();
+        LocalStorageObj.value = {
+            account: account,
+            password: password
+        };
+        LocalStorageMgr.ins.setItem(LocalStorageObj);
     }
 
     onClickReqister() {
@@ -43,4 +56,8 @@ export class LoginPanel extends UIPanel {
         Laya.Scene.open("HomeScene.ls");
     }
 
+    close(): void {
+        super.close();
+        GameEventMgr.instance.off(GameEventType.LoginSuccess, this, this.loginSuccess);
+    }
 }

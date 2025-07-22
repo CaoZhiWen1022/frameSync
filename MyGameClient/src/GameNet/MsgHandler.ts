@@ -4,6 +4,7 @@ import { LoginLogic } from "../Logic/LoginLogic";
 import { UserSettingLogic } from "../Logic/UserSettingLogic";
 import { proto } from "../protos/proto";
 import { TipPanel } from "../UI/common/TipPanel";
+import { GameNetMgr } from "./GameNetMgr";
 
 class MsgHandler {
 
@@ -23,7 +24,9 @@ class MsgHandler {
         this.add(proto.MsgId.ID_Matching, BattleLogic.matchingResp.bind(BattleLogic));
         this.add(proto.MsgId.ID_GameStartDownTime, BattleLogic.gameStartDownTimeResp.bind(BattleLogic));
         this.add(proto.MsgId.ID_GameStart, BattleLogic.gameSatrtResp.bind(BattleLogic));
-        this.add(proto.MsgId.ID_BattleFrame, BattleLogic.battleFrameResp.bind(BattleLogic));
+        this.add(proto.MsgId.ID_BattleFrameDataUpdate, BattleLogic.battleFrameDataUpdate.bind(BattleLogic));
+        this.add(proto.MsgId.ID_GET_BattleFrameData, BattleLogic.getBattleFrameDataResp.bind(BattleLogic));
+        this.add(proto.MsgId.ID_Heartbeat, GameNetMgr.instance.heartBeatHander.bind(GameNetMgr.instance));
     }
 
     fail(data: proto.CommonFailResp) {

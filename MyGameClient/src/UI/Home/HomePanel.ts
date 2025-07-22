@@ -10,6 +10,7 @@ import { UIMgr } from "../../FGUIFrame/UIMgr";
 import { UIPanel } from "../../FGUIFrame/UIPanel";
 import { HeroInfoLogic } from "../../Logic/HeroInfoLogic";
 import { LoginLogic } from "../../Logic/LoginLogic";
+import { userInfo } from "../../Logic/UserInfo";
 
 export class HomePanel extends UIPanel {
 
@@ -40,8 +41,8 @@ export class HomePanel extends UIPanel {
     }
 
     initUserHead() {
-        (this.m_ui.m_head as UI_UserHead).m_icon.url = getUserHeadUrl(LoginLogic.userInfo.head);
-        this.m_ui.m_userName.text = LoginLogic.userInfo.userName;
+        (this.m_ui.m_head as UI_UserHead).m_icon.url = getUserHeadUrl(userInfo.userInfo.head);
+        this.m_ui.m_userName.text = userInfo.userInfo.userName;
     }
 
     onClickStartGame() {

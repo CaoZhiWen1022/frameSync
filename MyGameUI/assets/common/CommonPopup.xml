@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1003,552">
+  <displayList>
+    <graph id="n0_oy7a" name="n0" xy="0,0" size="1003,552" type="rect"/>
+    <text id="n1_oy7a" name="title" xy="433,22" size="136,86" fontSize="66" text="提示"/>
+    <text id="n2_oy7a" name="content" xy="112,129" size="778,317" fontSize="32" align="center" vAlign="middle" autoSize="none" text="内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容"/>
+    <component id="n3_oy7a" name="confirmBtn" src="lk2f2" fileName="btn.xml" xy="139,461">
+      <Button title="确认"/>
+    </component>
+    <component id="n5_oy7a" name="cancelBtn" src="lk2f2" fileName="btn.xml" xy="660,461">
+      <Button title="取消"/>
+    </component>
+  </displayList>
+</component>

@@ -8,4 +8,5 @@ message UserInfo{
     int32 createTime=3;
     string account=4;
     string head=5;
+    string password=6;
 }

@@ -1,5 +1,6 @@
 import UI_BattlePanel from "../FGUI/battle/UI_BattlePanel";
 import UI_MatchingPanel from "../FGUI/battle/UI_MatchingPanel";
+import UI_CommonPopup from "../FGUI/common/UI_CommonPopup";
 import UI_FullScreenMaskPanel from "../FGUI/common/UI_FullScreenMaskPanel";
 import UI_TipPanel from "../FGUI/common/UI_TipPanel";
 import UI_HeroPanel from "../FGUI/hero/UI_HeroPanel";
@@ -11,6 +12,7 @@ import UI_ReqisterPopup from "../FGUI/login/UI_ReqisterPopup";
 import UI_SpineTestPanel from "../FGUI/spineTest/UI_SpineTestPanel";
 import { BattlePanel } from "../UI/battle/BattlePanel";
 import { MatchingPanel } from "../UI/battle/MatchingPanel";
+import { CommonPopup } from "../UI/common/CommonPopup";
 import { FullScreenMaskPanel } from "../UI/common/FullScreenMaskPanel";
 import { TipPanel } from "../UI/common/TipPanel";
 import { HeroPanel } from "../UI/hero/HeroPanel";
@@ -119,7 +121,16 @@ export class UIRegister {
                 UILayer: UILayer.panelLayer,
                 uiPackage: ["battle"],
                 uiRes: [],
-            },
+            },{
+                UIID: UIID.CommonPopup,
+                createInstance: UI_CommonPopup.createInstance,
+                _class: CommonPopup,
+                UIType: UIType.Popup,
+                UILayer: UILayer.popupLayer,
+                uiPackage: ["common"],
+                uiRes: [],
+                popupPriority: PopupPriority.High
+            }
         ]
     }
 

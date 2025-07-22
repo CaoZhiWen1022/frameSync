@@ -18,7 +18,8 @@ export enum GameEventType {
     EnterBattle = 'EnterBattle',
     GameStartDownTime = 'GameStartDownTime',
     GameStart = 'GameStart',
-    BattleFrameData = 'BattleFrameData',
+    BattleFrameDataUpdate = 'BattleFrameDataUpdate',
     GameLogicFrameUpdate = 'GameLogicFrameUpdate',
     BattlePingUpdate = 'BattlePingUpdate',
+    GET_BattleFrameDataResp = 'GET_BattleFrameDataResp',
 }
